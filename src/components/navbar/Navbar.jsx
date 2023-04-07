@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../helper/profile-pic (3).png";
+// import img from "../../helper/profile-pic (3).png";
 import style from "./Navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import Search from "../search/Search";
@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className={style.nav}>
       <div className={style.container}>
         <Link to={"/home"} className={style.conteinerImg}>
-          <img className={style.img} src={img} alt="logo" />
+          {/* <img className={style.img} src={img} alt="logo" /> */}
         </Link>
         <div className={style.Search}>
           <Search />
