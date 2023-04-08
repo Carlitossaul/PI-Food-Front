@@ -2,12 +2,18 @@
 }
 
 .card {
-  width: 22em;
-  height: 30em;
+  width: 24em;
+  height: 32em;
   background-color: var(--white1);
   border-radius: 12px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Agregar sombra */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5em;
 }
+
 .img {
   width: 100%;
   max-width: 100%;
@@ -15,4 +21,59 @@
   object-fit: cover;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+}
+
+.title {
+  font-size: 1.4em;
+  text-align: center;
+  margin-left: 1em;
+  margin-right: 1em;
+  color: var(--black1);
+}
+
+.span {
+  color: var(--black2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 3px;
+}
+
+.li {
+  display: inline-block;
+  color: var(--black3);
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button {
+  border-radius: 8px;
+  padding: 0.3em 0.8em;
+  font-size: 1em;
+  font-weight: 400;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid var(--orange1);
+  color: var(--orange1);
+  cursor: pointer;
+  transition: background-color 0.4s;
+  margin-bottom: 5px;
+}
+
+.button:hover {
+  background-color: rgba(245, 71, 72, 0.2);
+}
+
+.button:active {
+  color: #333;
 }
