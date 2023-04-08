@@ -1,9 +1,10 @@
-import style from "./Search.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecipesByName } from "../../redux/actions";
 import React, { useEffect, useState } from "react";
+import style from "./SearchBar.module.css";
+import img from "../../helper/searchicon.png";
 
-const Search = () => {
+const SearchBar = () => {
   const [name, setName] = useState("");
 
   const dispatch = useDispatch();
@@ -25,8 +26,8 @@ const Search = () => {
           type="text"
           value={name}
           onChange={handleChange}
-          className={style.inputSearch}
-          placeholder="Search a recipe..."
+          className={style.input}
+          placeholder="5000+ Recipes"
         ></input>
         <div className={style.divButton}>
           <button type="submit" className={style.button}>
@@ -38,4 +39,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchBar;

@@ -62,16 +62,18 @@
   font-size: 1em;
   font-weight: 400;
   font-family: inherit;
-  background-color: transparent;
-  border: 1px solid var(--orange1);
-  color: var(--orange1);
+  background-color: var(--orange1);
+  border: 1px solid;
+  color: var(--white1);
+  text-shadow: 1px 1px 1px #252525;
   cursor: pointer;
   transition: background-color 0.4s;
   margin-bottom: 5px;
 }
 
 .button:hover {
-  background-color: rgba(245, 71, 72, 0.2);
+  background-color: var(--black3);
+  border: 1px solid green;
 }
 
 .button:active {

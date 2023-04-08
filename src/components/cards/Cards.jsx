@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../card/Card";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { getRecipes } from "../../redux/actions";
 import style from "./Cards.module.css";
+import SearchBar from "../searchBar/SearchBar";
 
 const Cards = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,9 @@ const Cards = () => {
   console.log(recipes);
   return (
     <div className={style.container}>
-      <div className={style.header}></div>
+      <div className={style.header}>
+        <SearchBar />
+      </div>
       <div className={style.cards}>
         {recipes.length &&
           recipes
