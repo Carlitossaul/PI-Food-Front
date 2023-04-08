@@ -1,14 +1,12 @@
 import React from "react";
 import style from "./Card.module.css";
 
-const Card = ({ photo, alt, description }) => {
+const Card = ({ image, alt, name, diets }) => {
   return (
-    <div className={style.conteinerCard}>
-      <div className={style.card}>
-        <img className={style.img} src={photo} alt={alt} />
-        {/* <p>{description}</p> */}
-        {/* <p>{alt}</p> */}
-      </div>
+    <div className={style.card}>
+      <img className={style.img} src={image} alt={alt} />
+      <h1>{name}</h1>
+      {Array.isArray(diets) && diets.map((dieta) => <p>{dieta}</p>)}
     </div>
   );
 };

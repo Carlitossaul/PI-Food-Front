@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--white2);
 }
 
 code {
@@ -12,6 +13,19 @@ code {
     monospace;
 }
 
-/* Amarillo-medio anaranjado: #FFA500 */
-/* Blanco: #FFFFFF */
-/* Negro: #000000 */
+:root {
+  --orange1: #f54748;
+  --orange2: #ffa500;
+  --orange3: #ffc107;
+  --pink: #ffd5d5;
+  --white1: #ffffff;
+  --white2: #f8f9fa;
+  --black1: #000000;
+  --black2: #2e2e2e;
+  --black3: #343a40;
+}
+/* RGBA(34, 49, 63, 0.5) - Un tono oscuro de azul-grisáceo con una opacidad del 50%. */
+/* RGBA(85, 107, 47, 0.7) - Un verde oscuro con una opacidad del 70%. */
+/* RGBA(128, 0, 0, 0.6) - Un rojo oscuro con una opacidad del 60%. */
+/* RGBA(79, 79, 79, 0.8) - Un tono oscuro de gris con una opacidad del 80%. */
+/* RGBA(72, 61, 139, 0.4) - Un tono oscuro de morado con una opacidad del 40%. */

@@ -60,7 +60,8 @@
   font-size: 1.2em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #ffa500;
+  background-color: transparent;
+  border: 1px solid #ffa500;
   color: #ffffff;
   text-shadow: 1px 1px 1px #252525;
   cursor: pointer;
@@ -69,11 +70,11 @@
 }
 
 .button:hover {
-  background-color: #333;
+  background-color: rgba(255, 165, 0, 0.5);
 }
 
 .button:active {
-  color: green;
+  color: #333;
 }
 
 .video {

@@ -1,20 +1,15 @@
-import { GET_IMAGES, SEARCH_IMAGES } from "./actions";
+import { GET_RECIPES } from "./actions";
 
 const initialState = {
-  images: [],
+  recipes: [],
 };
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_IMAGES:
+    case GET_RECIPES:
       return {
         ...state,
-        images: action.payload,
-      };
-    case SEARCH_IMAGES:
-      return {
-        ...state,
-        images: action.payload,
+        recipes: action.payload,
       };
     default:
       return {
