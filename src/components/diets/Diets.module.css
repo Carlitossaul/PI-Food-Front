@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.button {
+  padding: 9px 19px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #3c3c3c;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #222;
+}
+
+.buttonActive {
+  background-color: #049918f3;
+  padding: 9px 19px;
+}
+
+.buttonActive:hover {
+  background-color: #06af1c;
+  padding: 9px 19px;
+}
+
+.buttonOutline {
+  color: #3c3c3c;
+  background-color: transparent;
+  /* border: 2px solid #3c3c3c; */
+}
+
+.buttonOutline:hover {
+  color: #fff;
+  background-color: #3c3c3c;
+}

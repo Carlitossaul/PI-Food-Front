@@ -4,6 +4,9 @@ import React, { useEffect } from "react";
 import { getRecipes } from "../../redux/actions";
 import style from "./Cards.module.css";
 import SearchBar from "../searchBar/SearchBar";
+import Order from "../order/Order";
+import { Link } from "react-router-dom";
+import Diets from "../diets/Diets";
 
 const Cards = () => {
   const dispatch = useDispatch();
@@ -17,6 +20,15 @@ const Cards = () => {
     <div className={style.container}>
       <div className={style.header}>
         <SearchBar />
+        <div className={style.conteinerOrderCreate}>
+          <Order />
+          <Link to={"createrecipe"}>
+            <button>Create Recipe</button>
+          </Link>
+        </div>
+      </div>
+      <div className={style.conteinerDiets}>
+        <Diets />
       </div>
       <div className={style.cards}>
         {recipes.length &&

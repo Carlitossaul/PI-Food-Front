@@ -15,6 +15,7 @@
   margin: 10px;
   color: var(--white3);
   text-shadow: 3px 3px 3px var(--black2);
+  font-weight: 700;
 }
 
 .input {
