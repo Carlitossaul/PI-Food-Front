@@ -1,7 +1,7 @@
 import style from "./Search.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getRecipesByName } from "../../redux/actions";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Search = () => {
   const [name, setName] = useState("");
@@ -26,7 +26,7 @@ const Search = () => {
           value={name}
           onChange={handleChange}
           className={style.inputSearch}
-          placeholder="Search a recipe..."
+          placeholder="Find a recipe..."
         ></input>
         <div className={style.divButton}>
           <button type="submit" className={style.button}>

@@ -1,8 +1,22 @@
 .container {
   display: flex;
   gap: 4px;
-  margin: 1em;
+  margin-bottom: 1em;
 }
+
+.divTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-size: 3.5em;
+  margin: 10px;
+  color: var(--white3);
+  text-shadow: 3px 3px 3px var(--black2);
+}
+
 .input {
   width: 20em;
   background-color: #f1f3f4;

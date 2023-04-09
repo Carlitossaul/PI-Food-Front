@@ -1,8 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getRecipesByName } from "../../redux/actions";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import style from "./SearchBar.module.css";
-import img from "../../helper/searchicon.png";
 
 const SearchBar = () => {
   const [name, setName] = useState("");
@@ -21,6 +20,9 @@ const SearchBar = () => {
 
   return (
     <div className={style.searchbar}>
+      <div className={style.divTitle}>
+        <h1 className={style.title}>Find a Recipe</h1>
+      </div>
       <form className={style.container} onSubmit={handleSearch}>
         <input
           type="text"
