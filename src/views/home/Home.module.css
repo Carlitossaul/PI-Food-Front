@@ -1,16 +1,6 @@
 .conteiner {
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 2em;
-  margin-right: 1em;
-  margin-left: 1em;
-}
-
 .header {
   width: 100%;
   height: 31em;
