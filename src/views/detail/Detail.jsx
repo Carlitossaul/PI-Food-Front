@@ -1,25 +1,38 @@
-// import React from "react";
+import React, { useEffect } from "react";
+import { getDetail } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import style from "./Detail.module.css";
 
-// const Detail = (props) => {
-//   const id = useParams();
+const Detail = () => {
+  let { id } = useParams();
 
-//   const dispatch = useDispatch();
-//   React.useEffect(() => {
-//     dispatch(actions.getFutbolistasDetails(id));
-//   }, []);
-//   const f = useSelector((state) => state.futbolistaDetail);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getDetail(id));
+  }, []);
+  const recipe = useSelector((state) => state.detail);
+  console.log(recipe);
+  console.log(id);
+  return (
+    <div className={style.container}>
+      <h1>{recipe.name}</h1>
+      <img src={recipe.image} alt={recipe.name} />
+      <h3>summary: {recipe.summary}</h3>
+      <h5>healthScore: {recipe.healthScore}</h5>
+      <h5>steps: {recipe.steps}</h5>
+      <span className={style.span}>
+        {" "}
+        Diets:{" "}
+        {Array.isArray(recipe.diets) &&
+          recipe.diets.map((dieta) => (
+            <ul className={style.ul}>
+              <li className={style.li}>{dieta}</li>
+            </ul>
+          ))}
+      </span>
+    </div>
+  );
+};
 
-//   return (
-//     <div className="detail">
-//       <h1>{f.name}</h1>
-//       <img src={f.imagen} alt={f.name} />
-//       <h3>Nacimiento: {f.nacimiento}</h3>
-//       <h5>Pais: {f.pais}</h5>
-//       <h5>Posición: {f.posición}</h5>
-//       <h5>Descripción: {f.descripción}</h5>
-//       <h5>Numero Camiseta: {f.numeroCamiseta}</h5>
-//     </div>
-//   );
-// };
-
-// export default Detail;
+export default Detail;

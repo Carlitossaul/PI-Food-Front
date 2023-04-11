@@ -3,11 +3,14 @@ import {
   GET_RECIPES_BY_NAME,
   ORDER_ALPHABETIC,
   ORDER_ORIGIN,
+  FILTER_DIETS,
+  GET_DETAIL,
 } from "./types";
 
 const initialState = {
   recipes: [],
   recipesAll: [],
+  detail: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -26,7 +29,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case ORDER_ALPHABETIC:
       let order = action.payload;
-      let allRecipes = [...state.recipes];
+      let allRecipes = [...state.recipesAll];
       let ordered = allRecipes.sort((a, b) => {
         if (order === "Ascendente") {
           return a.name && b.name ? a.name.localeCompare(b.name) : 0;
@@ -48,11 +51,24 @@ const rootReducer = (state = initialState, action) => {
           return recipe.created === true;
         }
       });
-      console.log(orderedOrigin);
-      console.log(select);
       return {
         ...state,
         recipes: orderedOrigin,
+      };
+    case FILTER_DIETS:
+      let diet = action.payload;
+      let recipes = [...state.recipesAll];
+      let filteredDiets = recipes.filter((recipe) =>
+        recipe.diets.includes(diet)
+      );
+      return {
+        ...state,
+        recipes: filteredDiets,
+      };
+    case GET_DETAIL:
+      return {
+        ...state,
+        detail: action.payload,
       };
     default:
       return {

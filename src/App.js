@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./views/landing/Landing.jsx";
 import Home from "./views/home/Home.jsx";
 import CreateRecipe from "./views/createRecipe/CreateRecipe.jsx";
+import Detail from "./views/detail/Detail.jsx";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/create" element={<CreateRecipe />} />
+        <Route exact path="/detail/:id" element={<Detail />} />
       </Routes>
     </>
   );

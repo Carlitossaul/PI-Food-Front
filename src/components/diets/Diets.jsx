@@ -2,6 +2,7 @@ import React from "react";
 import style from "./Diets.module.css";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
+import { filterDiets } from "../../redux/actions";
 
 const Diets = () => {
   const dispatch = useDispatch();
@@ -21,8 +22,9 @@ const Diets = () => {
   ];
 
   const handleTagClick = (tag) => {
-    setSelectedTag(tag.value);
-    // dispatch(searchImages(tag.value));
+    let value = tag.value;
+    setSelectedTag(value);
+    dispatch(filterDiets(value));
   };
 
   const renderTags = () => {
