@@ -1,13 +1,16 @@
 import axios from "axios";
-
-export const GET_RECIPES = "GET_RECIPES";
-export const GET_RECIPES_BY_NAME = "GET_RECIPES_BY_NAME";
+import {
+  GET_RECIPES,
+  GET_RECIPES_BY_NAME,
+  ORDER_ORIGIN,
+  FILTER_DIETS,
+  ORDER_ALPHABETIC,
+} from "./types";
 
 export const getRecipes = () => {
   return async function (dispatch) {
     try {
       const response = await axios(`http://localhost:3001/recipes`);
-      console.log(response.data);
       dispatch({
         type: GET_RECIPES,
         payload: response.data,
@@ -23,7 +26,6 @@ export const getRecipesByName = (name) => {
       const response = await axios(
         `http://localhost:3001/recipes?name=${name}`
       );
-      console.log(response.data);
       dispatch({
         type: GET_RECIPES_BY_NAME,
         payload: response.data,
@@ -32,4 +34,11 @@ export const getRecipesByName = (name) => {
       console.log(error);
     }
   };
+};
+
+export const orderAlphabetic = (order) => {
+  return { type: ORDER_ALPHABETIC, payload: order };
+};
+export const orderOrigin = (order) => {
+  return { type: ORDER_ORIGIN, payload: order };
 };
