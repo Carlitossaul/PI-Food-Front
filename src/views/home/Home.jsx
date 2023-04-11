@@ -6,7 +6,7 @@ import SearchBar from "../../components/searchBar/SearchBar";
 import Order from "../../components/order/Order";
 import { Link } from "react-router-dom";
 import Diets from "../../components/diets/Diets";
-import CardsRecipes from "../../components/cardRecipes/CardsRecipes";
+import CardsRecipes from "../../components/cardsRecipes/CardsRecipes";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Home = () => {
         <SearchBar />
         <div className={style.conteinerOrderCreate}>
           <Order />
-          <Link to={"createrecipe"}>
+          <Link to={"/create"}>
             <button>Create Recipe</button>
           </Link>
         </div>

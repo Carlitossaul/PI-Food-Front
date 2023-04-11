@@ -7,7 +7,7 @@ import Search from "../search/Search";
 const Navbar = () => {
   const location = useLocation();
 
-  return location.pathname !== "/" ? (
+  return location.pathname !== "/" && location.pathname !== "/create" ? (
     <nav className={style.nav}>
       <div className={style.container}>
         <Link to={"/home"} className={style.conteinerImg}>

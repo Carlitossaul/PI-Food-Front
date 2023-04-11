@@ -1,0 +1,18 @@
+.container {
+  background-image: url("../../helper/pexels-pixabay-326279.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: top;
+  /* filter: blur(5px); */
+  /* filter: saturate(60%); */
+  /* opacity: 0.8; */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
