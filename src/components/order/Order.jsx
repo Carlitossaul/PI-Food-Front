@@ -1,16 +1,26 @@
 import React from "react";
 import style from "./Order.module.css";
 import { useDispatch } from "react-redux";
-import { orderAlphabetic, orderOrigin } from "../../redux/actions";
+import {
+  orderAlphabetic,
+  orderOrigin,
+  getHealthScore,
+} from "../../redux/actions";
 
 const Order = () => {
   const dispatch = useDispatch();
 
   const handleOrderAbc = (event) => {
+    event.preventDefault();
     dispatch(orderAlphabetic(event.target.value));
   };
   const handleOrderOrigin = (event) => {
+    event.preventDefault();
     dispatch(orderOrigin(event.target.value));
+  };
+  const handleHealthScore = (event) => {
+    event.preventDefault();
+    dispatch(getHealthScore(event.target.value));
   };
 
   return (
@@ -30,6 +40,16 @@ const Order = () => {
         <option>Select</option>
         <option value="Api">From Api</option>
         <option value="Local">From Local</option>
+      </select>
+      <label htmlFor="health-score"> For Health Score:</label>
+      <select
+        onChange={handleHealthScore}
+        className={style.select}
+        id="health-score"
+      >
+        <option>Select</option>
+        <option value="mas">Health Score + </option>
+        <option value="menos">Health Score - </option>
       </select>
     </div>
   );

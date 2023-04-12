@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getRecipes());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className={style.container}>

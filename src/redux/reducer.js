@@ -5,6 +5,7 @@ import {
   ORDER_ORIGIN,
   FILTER_DIETS,
   GET_DETAIL,
+  HEALTH_SCORE,
 } from "./types";
 
 const initialState = {
@@ -41,6 +42,22 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         recipes: ordered,
       };
+    case HEALTH_SCORE:
+      let healthScore = action.payload;
+      let healthRecipes = [...state.recipesAll];
+      let isAscending = healthScore === "mas"; // Determina si se debe ordenar en orden ascendente o descendente
+      let healthRecipesEnd = healthRecipes.sort((a, b) => {
+        if (isAscending) {
+          return b.healthScore - a.healthScore;
+        } else {
+          return a.healthScore - b.healthScore;
+        }
+      });
+      return {
+        ...state,
+        recipes: healthRecipesEnd,
+      };
+
     case ORDER_ORIGIN:
       let select = action.payload;
       let recipesAll = [...state.recipesAll];

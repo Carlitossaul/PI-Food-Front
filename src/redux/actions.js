@@ -6,6 +6,7 @@ import {
   FILTER_DIETS,
   ORDER_ALPHABETIC,
   GET_DETAIL,
+  HEALTH_SCORE,
 } from "./types";
 
 export const getRecipes = () => {
@@ -54,6 +55,9 @@ export const getDetail = (id) => {
 
 export const orderAlphabetic = (order) => {
   return { type: ORDER_ALPHABETIC, payload: order };
+};
+export const getHealthScore = (order) => {
+  return { type: HEALTH_SCORE, payload: order };
 };
 
 export const orderOrigin = (order) => {

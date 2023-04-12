@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Card from "../card/Card";
 import style from "./CardsRecipes.module.css";
 
 const CardsRecipes = () => {
   const recipes = useSelector((state) => state.recipes);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(
+    parseInt(localStorage.getItem("currentPage")) || 1
+  );
   const itemsPerPage = 9;
+
+  useEffect(() => {
+    localStorage.setItem("currentPage", currentPage);
+  }, [currentPage]);
 
   const paginate = (data, page, itemsPerPage) => {
     const start = (page - 1) * itemsPerPage;

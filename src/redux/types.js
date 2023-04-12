@@ -4,3 +4,4 @@ export const ORDER_ALPHABETIC = "ORDER_ALPHABETIC";
 export const ORDER_ORIGIN = "ORDER_ORIGIN";
 export const FILTER_DIETS = "FILTER_DIETS";
 export const GET_DETAIL = "GET_DETAIL";
+export const HEALTH_SCORE = "HEALTH_SCORE";

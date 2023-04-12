@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { getDetail } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import style from "./Detail.module.css";
 
 const Detail = () => {
+  const navigate = useNavigate();
   let { id } = useParams();
 
   const dispatch = useDispatch();
@@ -16,6 +17,13 @@ const Detail = () => {
   console.log(id);
   return (
     <div className={style.container}>
+      <button
+        onClick={() => {
+          navigate("/home");
+        }}
+      >
+        Go Back!
+      </button>
       <h1>{recipe.name}</h1>
       <img src={recipe.image} alt={recipe.name} />
       <h3>summary: {recipe.summary}</h3>
