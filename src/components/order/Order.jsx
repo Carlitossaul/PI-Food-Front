@@ -11,15 +11,12 @@ const Order = () => {
   const dispatch = useDispatch();
 
   const handleOrderAbc = (event) => {
-    event.preventDefault();
     dispatch(orderAlphabetic(event.target.value));
   };
   const handleOrderOrigin = (event) => {
-    event.preventDefault();
     dispatch(orderOrigin(event.target.value));
   };
   const handleHealthScore = (event) => {
-    event.preventDefault();
     dispatch(getHealthScore(event.target.value));
   };
 

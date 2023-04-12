@@ -20,7 +20,7 @@ const CreateRecipe = () => {
     healthScore: "",
     steps: 0,
     image: "",
-    diets: [],
+    diets: "",
   });
 
   const handleChange = (e) => {
@@ -28,12 +28,12 @@ const CreateRecipe = () => {
       ...inputs,
       [e.target.name]: e.target.value,
     });
-    setErrors(
-      validation({
-        ...inputs,
-        [e.target.name]: e.target.value,
-      })
-    );
+    // setErrors(
+    //   validation({
+    //     ...inputs,
+    //     [e.target.name]: e.target.value,
+    //   })
+    // );
   };
 
   const handleSubmit = (e) => {
@@ -43,8 +43,17 @@ const CreateRecipe = () => {
     // } else if (inputs.numeroCamiseta < 0) {
     //   errors.numeroCamiseta = "El numero de camiseta tiene que ser mayor a 0";
     // } else {
-    //   axios.post("http://localhost:3001/recipes/", inputs);
     // }
+    axios.post("http://localhost:3001/recipes", {
+      name: inputs.name,
+      image: inputs.image,
+      summary: inputs.summary,
+      healthScore: inputs.healthScore,
+      steps: inputs.steps,
+      diets: inputs.diets,
+    });
+
+    console.log(inputs);
   };
 
   return (
