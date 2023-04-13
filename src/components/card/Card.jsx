@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Card.module.css";
 import { Link } from "react-router-dom";
 
-const Card = ({ image, alt, name, diets, id }) => {
+const Card = ({ image, alt, name, diets, id, healthScore }) => {
   return (
     <Link className={style.link} to={`/detail/${id}`}>
       <div className={style.card}>
@@ -18,7 +18,10 @@ const Card = ({ image, alt, name, diets, id }) => {
               </ul>
             ))}
         </span>
-        <button className={style.button}>Directions</button>
+        <div className={style.info}>
+          <p className={style.p}>Health Score: ❤ {healthScore}</p>
+          <button className={style.button}>Directions</button>
+        </div>
       </div>
     </Link>
   );

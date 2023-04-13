@@ -1,6 +1,6 @@
 .nav {
   height: 5.6em;
-  background-color: rgba(85, 107, 47, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100%;
   z-index: +1;
@@ -48,34 +48,22 @@
   position: relative;
 }
 
-.img {
-  font-size: 1.1em;
-  padding: 3px;
-}
-
-/* .link-active::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  width: 100%;
-  height: 0.6px;
-  background-color: var(--orange2);
-  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
-} */
-
 .Search {
   margin-right: 1em;
 }
 
 .conteinerImg {
-  background-color: transparent;
+  background-color: rgba(144, 238, 144, 0.4);
+  margin: 0.3em 1em;
+  border-radius: 30px;
+  border: 1px solid rgba(144, 238, 144, 0.5);
 }
 
 .img {
-  max-width: 100%;
-  height: 4.5em;
-  margin-left: 1em;
+  font-size: 2.5em;
+  padding: 7px;
+  max-width: 2em;
+  height: 1.5em;
   object-fit: cover;
   background-color: transparent;
 }

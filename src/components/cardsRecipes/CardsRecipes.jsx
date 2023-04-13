@@ -56,6 +56,7 @@ const CardsRecipes = () => {
             image={recipe.image}
             alt={recipe.alt}
             diets={recipe.diets}
+            healthScore={recipe.healthScore}
           />
         ))}
       </div>

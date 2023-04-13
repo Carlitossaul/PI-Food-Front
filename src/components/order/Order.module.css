@@ -1,0 +1,31 @@
+.order {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.label {
+  font-weight: bold;
+  color: var(--white1);
+  text-shadow: 2px 2px 4px var(--black2);
+  font-size: 1.1em;
+}
+.select {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--black1);
+  background-color: var(--white1);
+  color: var(--black3);
+  font-size: 15px;
+  outline: none;
+}
+
+.option {
+  color: var(--black2);
+}
+.option:hover {
+  background-color: orange;
+  color: white;
+}

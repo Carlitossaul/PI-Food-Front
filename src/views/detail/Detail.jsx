@@ -11,6 +11,7 @@ const Detail = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getDetail(id));
+    window.scrollTo(0, 0);
   }, []);
   const recipe = useSelector((state) => state.detail);
   console.log(recipe);

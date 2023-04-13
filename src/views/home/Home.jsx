@@ -4,7 +4,6 @@ import { getRecipes } from "../../redux/actions";
 import style from "./Home.module.css";
 import SearchBar from "../../components/searchBar/SearchBar";
 import Order from "../../components/order/Order";
-import { Link } from "react-router-dom";
 import Diets from "../../components/diets/Diets";
 import CardsRecipes from "../../components/cardsRecipes/CardsRecipes";
 

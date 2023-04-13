@@ -33,7 +33,7 @@
 }
 
 .title {
-  font-size: 1.4em;
+  font-size: 1.3em;
   text-align: center;
   margin-left: 1em;
   margin-right: 1em;
@@ -64,8 +64,19 @@
   font-weight: bold;
   text-transform: capitalize;
 }
-
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  height: 4em;
+}
+.p {
+  color: var(--black2);
+  font-size: 1em;
+}
 .button {
+  width: 6em;
+  height: 2.5em;
   border-radius: 8px;
   padding: 0.3em 0.8em;
   font-size: 1em;
@@ -81,7 +92,7 @@
 }
 
 .button:hover {
-  background-color: var(--black3);
+  background-color: #5e412f;
   border: 1px solid green;
 }
 
