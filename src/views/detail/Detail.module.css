@@ -9,7 +9,7 @@
 .recipe {
   width: 100%;
   max-width: 1200px;
-  margin: 9.5em 2em;
+  margin: 7.5em 2em;
   padding: 1em 2em;
   background-color: var(--white1);
   border-radius: 8px;
@@ -31,11 +31,10 @@
   font-size: 1.1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #0069d9;
+  background-color: var(--orange1);
   color: var(--white1);
   cursor: pointer;
   transition: background-color 0.4s;
-  border: 2px solid #0069d9;
 }
 
 .button:hover {

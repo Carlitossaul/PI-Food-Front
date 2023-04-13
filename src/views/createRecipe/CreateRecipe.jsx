@@ -17,6 +17,8 @@ const CreateRecipe = () => {
     name: "",
     summary: "",
     healthScore: 0,
+    servings: 0,
+    readyInMinutes: 0,
     steps: "",
     image: "",
     diets: [],
@@ -25,6 +27,8 @@ const CreateRecipe = () => {
     name: "",
     summary: "",
     healthScore: "",
+    servings: 0,
+    readyInMinutes: 0,
     steps: 0,
     image: "",
     diets: [],
@@ -98,6 +102,22 @@ const CreateRecipe = () => {
           value={inputs.healthScore}
         />
         {errors.healthScore && <p>{errors.healthScore}</p>}
+        <label htmlFor="readyInMinutes">readyInMinutes: </label>
+        <input
+          type="number"
+          name="readyInMinutes"
+          onChange={handleChange}
+          value={inputs.readyInMinutes}
+        />
+        {errors.readyInMinutes && <p>{errors.readyInMinutes}</p>}
+        <label htmlFor="servings">servings: </label>
+        <input
+          type="number"
+          name="servings"
+          onChange={handleChange}
+          value={inputs.servings}
+        />
+        {errors.servings && <p>{errors.servings}</p>}
 
         <label htmlFor="steps">Steps: </label>
         <input

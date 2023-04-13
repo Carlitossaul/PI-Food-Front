@@ -1,5 +1,5 @@
 .nav {
-  height: 5.6em;
+  height: 5em;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100%;
@@ -34,14 +34,14 @@
 
 .link:hover {
   text-shadow: 1px 1px 3px var(black3);
-  color: #78c0a8;
+  color: #fcebb6;
 }
 
 .link-active {
   font-weight: bold;
-  color: #fcebb6;
+  color: #f0a830;
   text-shadow: 1px 1px 3px var(--black3);
-  background-color: #5e412f;
+  background-color: var(--black2);
   /* border: 1px solid var(--black3); */
   font-size: 1.7rem;
   transition: all 0.4s;
@@ -53,16 +53,13 @@
 }
 
 .conteinerImg {
-  background-color: rgba(144, 238, 144, 0.4);
-  margin: 0.3em 1em;
-  border-radius: 30px;
-  border: 1px solid rgba(144, 238, 144, 0.5);
 }
 
 .img {
   font-size: 2.5em;
   padding: 7px;
-  max-width: 2em;
+  margin: 5px 8px;
+  max-width: 3em;
   height: 1.5em;
   object-fit: cover;
   background-color: transparent;

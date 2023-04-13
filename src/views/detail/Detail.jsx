@@ -25,7 +25,7 @@ const Detail = () => {
             navigate("/home");
           }}
         >
-          ⬅️ Go Back!
+          Go Back!
         </button>
         <h1 className={style.title}>{recipe.name}</h1>
         <div className={style.info}>
@@ -43,26 +43,6 @@ const Detail = () => {
         </ul>
         <h3 className={style.subTitle}>Summary: </h3>
         <p className={style.text}>{recipe.summary}</p>
-        {Array.isArray(recipe.ingredients) && (
-          <table className={style.table}>
-            <thead>
-              <tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-              </tr>
-            </thead>
-            <tbody>
-              {recipe.ingredients.map((ingredient) => (
-                <tr key={ingredient.id}>
-                  <td>{ingredient.name}</td>
-                  <td>
-                    {ingredient.amount} {ingredient.unit}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
         <h3 className={style.subTitle}>Steps: </h3>
         <p className={style.text}>{recipe.steps}</p>
       </div>
@@ -71,3 +51,26 @@ const Detail = () => {
 };
 
 export default Detail;
+
+{
+  /* {Array.isArray(recipe.ingredients) && (
+  <table className={style.table}>
+    <thead>
+      <tr>
+        <th>Ingrediente</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      {recipe.ingredients.map((ingredient) => (
+        <tr key={ingredient.id}>
+          <td>{ingredient.name}</td>
+          <td>
+            {ingredient.amount} {ingredient.unit}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)} */
+}

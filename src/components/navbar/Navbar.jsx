@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../helper/61194988f8fe340004e0d2c8.png";
+import img from "../../helper/logo.png";
 import style from "./Navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import Search from "../search/Search";

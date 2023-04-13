@@ -9,13 +9,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* filter: blur(5px); */
-  /* filter: saturate(60%); */
-  /* opacity: 0.8; */
+}
+.container label {
+  color: aliceblue;
+  font-size: 1.2em;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5em;
 }
