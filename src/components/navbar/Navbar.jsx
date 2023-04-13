@@ -11,45 +11,47 @@ const Navbar = () => {
     location.pathname === "/create" ||
     location.pathname.startsWith("/detail");
   return (
-    <nav className={style.nav}>
-      <div className={style.container}>
-        <div className={style.links}>
-          <Link to={"/home"} className={style.conteinerImg}>
-            <img className={style.img} src={img} alt="logo" />
-          </Link>
-          <Link
-            to="/home"
-            className={`${style.link} ${
-              window.location.pathname === "/home" && style["link-active"]
-            }`}
-          >
-            Home
-          </Link>
+    location.pathname !== "/" && (
+      <nav className={style.nav}>
+        <div className={style.container}>
+          <div className={style.links}>
+            <Link to={"/home"} className={style.conteinerImg}>
+              <img className={style.img} src={img} alt="logo" />
+            </Link>
+            <Link
+              to="/home"
+              className={`${style.link} ${
+                window.location.pathname === "/home" && style["link-active"]
+              }`}
+            >
+              Home
+            </Link>
 
-          <Link
-            to="/create"
-            className={`${style.link} ${
-              window.location.pathname === "/create" && style["link-active"]
-            }`}
-          >
-            Create
-          </Link>
-          <Link
-            to="/about"
-            className={`${style.link} ${
-              window.location.pathname === "/about" && style["link-active"]
-            }`}
-          >
-            About
-          </Link>
-        </div>
-        {!isAboutOrCreatedOrDetail && (
-          <div className={style.Search}>
-            <Search />
+            <Link
+              to="/create"
+              className={`${style.link} ${
+                window.location.pathname === "/create" && style["link-active"]
+              }`}
+            >
+              Create
+            </Link>
+            <Link
+              to="/about"
+              className={`${style.link} ${
+                window.location.pathname === "/about" && style["link-active"]
+              }`}
+            >
+              About
+            </Link>
           </div>
-        )}
-      </div>
-    </nav>
+          {!isAboutOrCreatedOrDetail && (
+            <div className={style.Search}>
+              <Search />
+            </div>
+          )}
+        </div>
+      </nav>
+    )
   );
 };
 
