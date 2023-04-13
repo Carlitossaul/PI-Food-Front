@@ -19,12 +19,7 @@ const Home = () => {
     <div className={style.container}>
       <div className={style.header}>
         <SearchBar />
-        <div className={style.conteinerOrderCreate}>
-          <Order />
-          <Link to={"/create"}>
-            <button>Create Recipe</button>
-          </Link>
-        </div>
+        <Order />
       </div>
       <div className={style.conteinerDiets}>
         <Diets />

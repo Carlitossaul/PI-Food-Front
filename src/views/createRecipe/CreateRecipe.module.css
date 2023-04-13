@@ -6,6 +6,9 @@
   height: 100vh;
   background-attachment: fixed;
   background-position: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* filter: blur(5px); */
   /* filter: saturate(60%); */
   /* opacity: 0.8; */

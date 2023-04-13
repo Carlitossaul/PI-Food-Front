@@ -1,26 +1,56 @@
 import React from "react";
-import img from "../../helper/profile-pic.png";
+import img from "../../helper/61194988f8fe340004e0d2c8.png";
 import style from "./Navbar.module.css";
 import { Link, useLocation } from "react-router-dom";
 import Search from "../search/Search";
 
 const Navbar = () => {
   const location = useLocation();
-
-  return location.pathname !== "/" &&
-    location.pathname !== "/create" &&
-    !location.pathname.includes("/detail/") ? (
+  const isAboutOrCreatedOrDetail =
+    location.pathname === "/about" ||
+    location.pathname === "/create" ||
+    location.pathname.startsWith("/detail");
+  return (
     <nav className={style.nav}>
       <div className={style.container}>
-        <Link to={"/home"} className={style.conteinerImg}>
-          <img className={style.img} src={img} alt="logo" />
-        </Link>
-        <div className={style.Search}>
-          <Search />
+        <div className={style.links}>
+          <Link to={"/home"} className={style.conteinerImg}>
+            <img className={style.img} src={img} alt="logo" />
+          </Link>
+          <Link
+            to="/home"
+            className={`${style.link} ${
+              window.location.pathname === "/home" && style["link-active"]
+            }`}
+          >
+            Home
+          </Link>
+
+          <Link
+            to="/create"
+            className={`${style.link} ${
+              window.location.pathname === "/create" && style["link-active"]
+            }`}
+          >
+            Create
+          </Link>
+          <Link
+            to="/about"
+            className={`${style.link} ${
+              window.location.pathname === "/about" && style["link-active"]
+            }`}
+          >
+            About
+          </Link>
         </div>
+        {!isAboutOrCreatedOrDetail && (
+          <div className={style.Search}>
+            <Search />
+          </div>
+        )}
       </div>
     </nav>
-  ) : null;
+  );
 };
 
 export default Navbar;
