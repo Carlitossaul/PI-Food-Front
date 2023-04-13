@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import style from "./CreateRecipe.module.css";
 import validation from "./validation";
+import { useDispatch, useSelector } from "react-redux";
+import { getDiets } from "../../redux/actions";
 
 const CreateRecipe = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getDiets());
+  }, []);
+  let diets = useSelector((state) => state.diets);
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({
     name: "",
@@ -20,7 +27,7 @@ const CreateRecipe = () => {
     healthScore: "",
     steps: 0,
     image: "",
-    diets: "",
+    diets: [],
   });
 
   const handleChange = (e) => {
@@ -44,15 +51,15 @@ const CreateRecipe = () => {
     //   errors.numeroCamiseta = "El numero de camiseta tiene que ser mayor a 0";
     // } else {
     // }
-    axios.post("http://localhost:3001/recipes", {
-      name: inputs.name,
-      image: inputs.image,
-      summary: inputs.summary,
-      healthScore: inputs.healthScore,
-      steps: inputs.steps,
-      diets: inputs.diets,
-    });
-
+    axios.post("http://localhost:3001/recipes", inputs);
+    // {
+    //   name: inputs.name,
+    //   image: inputs.image,
+    //   summary: inputs.summary,
+    //   healthScore: inputs.healthScore,
+    //   steps: inputs.steps,
+    //   diets: inputs.diets,
+    // }
     console.log(inputs);
   };
 
@@ -107,12 +114,18 @@ const CreateRecipe = () => {
           value={inputs.image}
         />
         <label htmlFor="diets">Diets: </label>
-        <input
-          type="text"
+        <select
           name="diets"
-          onChange={handleChange}
-          value={inputs.diets}
-        />
+          id="diets"
+          onChange={(e) =>
+            setInputs({ ...inputs, diets: [...inputs.diets, e.target.value] })
+          }
+        >
+          {diets.length &&
+            diets.map((diet) => {
+              return <option value={diet}>{diet}</option>;
+            })}
+        </select>
 
         <button type="submit">Save Recipe</button>
       </form>

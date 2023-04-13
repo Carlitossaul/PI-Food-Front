@@ -7,8 +7,23 @@ import {
   ORDER_ALPHABETIC,
   GET_DETAIL,
   HEALTH_SCORE,
+  GET_DIETS,
 } from "./types";
 
+export const getDiets = () => {
+  return async function (dispatch) {
+    try {
+      const response = await axios(`http://localhost:3001/diets`);
+
+      dispatch({
+        type: GET_DIETS,
+        payload: response.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 export const getRecipes = () => {
   return async function (dispatch) {
     try {
