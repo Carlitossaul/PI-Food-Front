@@ -65,8 +65,8 @@ const CreateRecipe = () => {
       </button>
       <form className={style.form} onSubmit={handleSubmit}>
         <h1 className={style.title}>Creating recipe: {inputs.name} </h1>
-        <div className={style.containerForm}>
-          <div>
+        <div className={style.containerFormOne}>
+          <div className={style.inputContainer}>
             <label className={style.label} htmlFor="name">
               Name:
             </label>
@@ -151,36 +151,39 @@ const CreateRecipe = () => {
             </select>
           </div>
 
-          <div>
+          <div className={style.containerFormTwo}>
             <div className={style.containerTextArea}>
-              <label className={style.label} htmlFor="summary">
-                Summary:{" "}
-              </label>
-              <textarea
-                type="text"
-                name="summary"
-                onChange={handleChange}
-                value={inputs.summary}
-              />
-              <span className={style.span}>
-                {errors.name ? errors.name : " "}
-              </span>
-
-              <label className={style.label} htmlFor="steps">
-                Steps:{" "}
-              </label>
-              <textarea
-                type="text"
-                name="steps"
-                onChange={handleChange}
-                value={inputs.steps}
-              />
-              <span className={style.span}>
-                {errors.name ? errors.name : " "}
-              </span>
+              <div className={style.divTextArea}>
+                <label className={style.label} htmlFor="summary">
+                  Summary:{" "}
+                </label>
+                <textarea
+                  type="text"
+                  name="summary"
+                  onChange={handleChange}
+                  value={inputs.summary}
+                />
+                <span className={style.span}>
+                  {errors.name ? errors.name : " "}
+                </span>
+              </div>
+              <div className={style.divTextArea}>
+                <label className={style.label} htmlFor="steps">
+                  Steps:{" "}
+                </label>
+                <textarea
+                  type="text"
+                  name="steps"
+                  onChange={handleChange}
+                  value={inputs.steps}
+                />
+                <span className={style.span}>
+                  {errors.name ? errors.name : " "}
+                </span>
+              </div>
             </div>
-            <div>
-              <h1>image </h1>
+            <div className={style.containerImage}>
+              <h1>Image Preview </h1>
               <img className={style.image} src={inputs.image} alt="" />
             </div>
           </div>
