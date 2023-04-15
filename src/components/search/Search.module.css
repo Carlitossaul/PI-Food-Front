@@ -46,3 +46,42 @@
   outline: none;
   box-shadow: 0px 0px 0px 3px rgba(245, 71, 72, 0.3);
 }
+
+@media (max-width: 391px) {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .divButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .inputSearch {
+    font-size: 8px;
+    margin: 0;
+  }
+  .button {
+    font-size: 8px;
+    margin: 0;
+  }
+}
+@media (min-width: 391px) and (max-width: 768px) {
+  /* Estilos para pantallas con ancho máximo de 768px */
+  .inputSearch {
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Estilos para pantallas con ancho entre 768px y 992px */
+  .inputSearch {
+    margin-top: 0px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Estilos para pantallas con ancho mínimo de 992px */
+}

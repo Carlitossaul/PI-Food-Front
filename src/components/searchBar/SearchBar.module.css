@@ -65,3 +65,23 @@
   background-color: #5ac794;
   border: 1px solid green;
 }
+
+@media (max-width: 391px) {
+  .searchbar {
+    display: none;
+  }
+}
+@media (min-width: 391px) and (max-width: 768px) {
+  /* Estilos para pantallas con ancho máximo de 768px */
+  .searchbar {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Estilos para pantallas con ancho entre 768px y 992px */
+}
+
+@media (min-width: 992px) {
+  /* Estilos para pantallas con ancho mínimo de 992px */
+}

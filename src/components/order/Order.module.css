@@ -29,3 +29,55 @@
   background-color: orange;
   color: white;
 }
+
+@media (max-width: 391px) {
+  .order {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 10px;
+    gap: 0px;
+  }
+  .selectColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .select {
+    font-size: 6px;
+  }
+  .option {
+    font-size: 6px;
+    padding: 2px;
+    margin: 0px;
+  }
+}
+@media (min-width: 391px) and (max-width: 768px) {
+  /* Estilos para pantallas con ancho máximo de 768px */
+  .order {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+  }
+  .selectColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .select {
+    font-size: 12px;
+  }
+  .option {
+    font-size: 10px;
+    padding: 5px;
+    margin: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Estilos para pantallas con ancho entre 768px y 992px */
+}
+
+@media (min-width: 992px) {
+  /* Estilos para pantallas con ancho mínimo de 992px */
+}

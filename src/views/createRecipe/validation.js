@@ -10,18 +10,20 @@ const validation = ({
 }) => {
   const errors = {};
 
-  if (!name) errors.name = "The recipe must have a name!";
-  if (!summary) errors.summary = "Here is a summary of the recipe.";
-  if (!servings)
+  if (name.length < 0) errors.name = "The recipe must have a name!";
+  if (summary.length < 0) errors.summary = "Here is a summary of the recipe.";
+  if (readyInMinutes < 0)
     errors.servings = "Please indicate how many servings this recipe yields";
-  if (!readyInMinutes)
+  if (readyInMinutes < 0)
     errors.readyInMinutes = "how long is the preparation time?";
-  if (healthScore > 100 || healthScore <= 0)
+  if (healthScore > 100 || healthScore < 0)
     errors.healthScore =
       "Indicate with a number from 1 to 100 how healthy this recipe is..";
-  if (!image) errors.image = "Please add the url of the image of your recipe.";
-  if (!steps) errors.steps = "What are the steps to prepare the recipe?";
-  if (!diets)
+  if (image.length < 0)
+    errors.image = "Please add the url of the image of your recipe.";
+  if (steps.length < 0)
+    errors.steps = "What are the steps to prepare the recipe?";
+  if (diets.length < 0)
     errors.diets =
       "What type of diet does this recipe belong to? it can be several...";
 
