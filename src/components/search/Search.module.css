@@ -64,8 +64,13 @@
     margin: 0;
   }
   .button {
-    font-size: 8px;
+    padding: 6px;
     margin: 0;
+    color: black;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 13px;
+    background-color: var(--orange3);
   }
 }
 @media (min-width: 391px) and (max-width: 768px) {
