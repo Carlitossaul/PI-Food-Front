@@ -64,7 +64,7 @@ const CreateRecipe = () => {
       >
         Go Back!
       </button>
-      <form className={`${style.form} ${style.grid}`} onSubmit={handleSubmit}>
+      <form className={style.form} onSubmit={handleSubmit}>
         <div className={style.divTitle}>
           <h1 className={style.title}>Creating recipe: {inputs.name} </h1>
         </div>
@@ -159,6 +159,7 @@ const CreateRecipe = () => {
             name="summary"
             onChange={handleChange}
             value={inputs.summary}
+            placeholder="Write a summary of the recipe"
           />
           <span className={style.span}>{errors.name ? errors.name : " "}</span>
 
@@ -166,6 +167,7 @@ const CreateRecipe = () => {
             Steps:{" "}
           </label>
           <textarea
+            placeholder="Write the steps to prepare the recipe"
             className={style.textArea}
             type="text"
             name="steps"

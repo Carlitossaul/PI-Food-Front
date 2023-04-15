@@ -67,7 +67,11 @@
 
 @media (max-width: 391px) {
   .nav {
-    height: 6em;
+    height: 5.5em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .container {
     width: 100%;
@@ -79,15 +83,22 @@
   }
   .links {
     margin: 0;
-    gap: 1px;
+    padding: 0;
+    gap: 0px;
+    display: flex;
+    justify-content: center;
   }
 
   .link {
     font-size: 16px;
   }
+  .conteinerImg {
+    margin: 0;
+    padding: 0;
+  }
   .img {
     font-size: 22px;
-    padding: 3px;
+    padding: 1px;
     margin: 0;
   }
 }
