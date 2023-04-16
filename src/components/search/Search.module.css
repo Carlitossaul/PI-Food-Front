@@ -63,11 +63,15 @@
     font-size: 8px;
     margin: 0;
   }
+  .inputSearch::placeholder {
+    font-size: 11px; /* Establece el tamaño de fuente del placeholder */
+    color: #999; /* Establece el color del placeholder */
+  }
   .button {
     padding: 6px;
     margin: 0;
-    color: black;
-    text-shadow: none;
+    color: var(--black2);
+    text-shadow: 0 0 1px green;
     font-weight: 600;
     font-size: 13px;
     background-color: var(--orange3);
