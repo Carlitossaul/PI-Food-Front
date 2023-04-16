@@ -206,7 +206,7 @@
     margin-left: 4px;
   }
   .input {
-    width: 70%;
+    width: 90%;
     margin-left: 4px;
   }
   .imageTitle {
@@ -309,6 +309,12 @@
 
 @media (min-width: 768px) and (max-width: 992px) {
   /* Estilos para pantallas con ancho entre 768px y 992px */
+  .button {
+    /* font-size: 14px; */
+    position: fixed;
+    top: 8.2em;
+    left: 0.5em;
+  }
 }
 
 @media (min-width: 992px) {
