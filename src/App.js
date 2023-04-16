@@ -5,6 +5,7 @@ import Landing from "./views/landing/Landing.jsx";
 import Home from "./views/home/Home.jsx";
 import CreateRecipe from "./views/createRecipe/CreateRecipe.jsx";
 import Detail from "./views/detail/Detail.jsx";
+import About from "./views/about/About.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/create" element={<CreateRecipe />} />
         <Route exact path="/detail/:id" element={<Detail />} />
+        <Route exact path="/about" element={<About />} />
       </Routes>
     </>
   );

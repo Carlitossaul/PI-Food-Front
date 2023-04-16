@@ -26,7 +26,7 @@
 .divTitle {
   width: 100%;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .divInputs {
@@ -65,6 +65,7 @@
   font-size: 1.5em;
   font-weight: 800;
   text-shadow: 1px 1px 2px greenyellow;
+  color: var(--black1);
 }
 .divSubmit {
   display: flex;
@@ -92,7 +93,7 @@
   justify-content: center;
   font-weight: 700;
   font-size: 2.5em;
-  color: var(--black2);
+  color: var(--black1);
   text-shadow: 1px 1px 2px greenyellow;
 }
 
@@ -156,7 +157,7 @@
 }
 
 .button:hover {
-  background-color: #004c8c;
+  background-color: #e62828;
 }
 
 .button:active {

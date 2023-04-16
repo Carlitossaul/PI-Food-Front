@@ -19,9 +19,9 @@
 .card {
   width: 40em;
   height: 20em;
-  background: rgba(255, 255, 255, 0.2); /* Fondo transparente */
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(3px); /* Filtro de borroso */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombreado */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -85,9 +85,83 @@
 }
 
 @media (max-width: 391px) {
+  .video {
+    display: none;
+  }
+  .landing {
+    background-image: url("../../helper/photo-1593504049359-74330189a345.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    display: flex;
+    width: 95%;
+    backdrop-filter: blur(0.3px);
+  }
+  .areYou {
+    font-size: 30px;
+  }
+  .hungry {
+    font-size: 45px;
+  }
+
+  .parrafo {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .button {
+    font-size: 16px;
+    background-color: #ffa500;
+  }
 }
 @media (min-width: 391px) and (max-width: 768px) {
   /* Estilos para pantallas con ancho máximo de 768px */
+  .video {
+    display: none;
+  }
+  .landing {
+    background-image: url("../../helper/photo-1593504049359-74330189a345.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    display: flex;
+    width: 95%;
+    backdrop-filter: blur(0.3px);
+  }
+  .areYou {
+    font-size: 30px;
+  }
+  .hungry {
+    font-size: 45px;
+  }
+
+  .parrafo {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .button {
+    font-size: 16px;
+    background-color: #ffa500;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
