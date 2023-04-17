@@ -20,7 +20,8 @@
 
 .input {
   width: 20em;
-  background-color: #f1f3f4;
+  min-height: 24px;
+  background-color: var(--white2);
   border: none;
   border-radius: 8px;
   padding: 9px 20px;
@@ -49,20 +50,20 @@
 .button {
   border-radius: 8px;
   border: 1px solid #52b788;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  color: #252525;
-  text-shadow: 1px 1px 1px #ddd;
-  font-weight: 500;
+  padding: 7px 17px;
+  font-size: 18px;
+  color: var(--black2);
+  text-shadow: 0 0 1px #ddd;
+  font-weight: 700;
   font-family: inherit;
   background-color: #52b788;
   cursor: pointer;
-  transition: all 0.4s;
+  transition: all 0.5s;
 }
 
 .button:hover {
   border-color: #646cff;
-  background-color: #5ac794;
+  background-color: #4ad192;
   border: 1px solid green;
 }
 
