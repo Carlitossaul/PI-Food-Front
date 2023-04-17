@@ -7,7 +7,7 @@ import CreateRecipe from "./views/createRecipe/CreateRecipe.jsx";
 import Detail from "./views/detail/Detail.jsx";
 import About from "./views/about/About.jsx";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = "pi-food-back-production-2fb8.up.railway.app/";
 
 const App = () => {
   return (
