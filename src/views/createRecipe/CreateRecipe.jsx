@@ -50,7 +50,10 @@ const CreateRecipe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/recipes", inputs);
+    axios.post(
+      "https://pi-food-back-production-2fb8.up.railway.app/recipes",
+      inputs
+    );
     alert("Recipe created successfully");
   };
 
