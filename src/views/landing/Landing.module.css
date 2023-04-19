@@ -52,7 +52,9 @@
   color: #ffa500;
   font-size: 1.1em;
 }
-
+.link {
+  text-decoration: none;
+}
 .button {
   border-radius: 8px;
   border: none;

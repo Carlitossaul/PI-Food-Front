@@ -14,7 +14,7 @@ const Landing = () => {
           <p className={style.parrafo}>
             Discover the best diets and recipes for a good alimentation...
           </p>
-          <NavLink to={"/home"}>
+          <NavLink className={style.link} to={"/home"}>
             <button className={style.button}>Start</button>
           </NavLink>
         </div>
