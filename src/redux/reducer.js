@@ -82,8 +82,8 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_DIETS:
       let diet = action.payload;
       let recipes = [...state.recipesAll];
-      let filteredDiets = recipes.filter((recipe) =>
-        recipe.diets.includes(diet)
+      let filteredDiets = recipes.filter(
+        (recipe) => recipe.diets && recipe.diets.includes(diet)
       );
       return {
         ...state,

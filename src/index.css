@@ -14,6 +14,8 @@ code {
 }
 
 :root {
+  --green1: #06af1c;
+  --green2: #078317;
   --orange1: #f54748;
   --orange2: #ffa500;
   --orange3: #ffc107;
