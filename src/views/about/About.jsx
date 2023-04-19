@@ -23,9 +23,9 @@ const Detail = () => {
         <h1 className={style.title}>About this website</h1>
         <div className={style.info}>
           <p>
-            Este es un proyecto individual integrador que desarrolle para
-            aprobar la primera instancia de los dos proyectos finales del
-            bootcamp{" "}
+            This is an individual integrative project that I developed in order
+            to pass the first pass the first instance of the two final projects
+            of the bootcamp{" "}
             <Link
               className={style.henryLink}
               target="_blank"
@@ -36,23 +36,23 @@ const Detail = () => {
             .
           </p>
           <p>
-            Una app de recetas para buscar por nombre o por dietas. Algunas de
-            sus funciones son creacion de recetas o filtros combinados.
+            A recipe app to search by name or by diet. Some of its functions are
+            recipe creation or combined filters.
           </p>
         </div>
         <h1 className={style.title}>About me</h1>
         <div className={style.info}>
           <p>
-            Mi nombre es Carlos Lovey y me gusta crear cosas que viven en
-            internet. Me encanta desarrollar. Disfruto crear proyectos y verlos
-            trabajando.
+            My name is Carlos Lovey and I like to create things that live on the
+            internet. I love developing. I enjoy creating projects and watching
+            them work.
           </p>
           <p>
-            Mi interes por el desarrollo web se gesto en mi adolescencia pero
-            pude dedicarme a mi formacion recien alla por junio de 2022 en un
-            bootcamp. En simultaneo he hecho cursos para complementar la ruta de
-            aprendizaje, actualmente tengo experiencia trabajando con las
-            siguientes tecnologias:
+            My interest in web development began in my adolescence but I was
+            able to dedicate myself to my training just around June 2022 in a
+            bootcamp. Simultaneously I have taken courses to complement the path
+            of learning, I currently have experience working with the following
+            technologies:
           </p>
         </div>
         <div className={style.tecnologias}>
