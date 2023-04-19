@@ -55,6 +55,7 @@ const CreateRecipe = () => {
       inputs
     );
     alert("Recipe created successfully");
+    navigate("/home");
   };
 
   return (
