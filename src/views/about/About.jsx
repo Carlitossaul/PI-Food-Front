@@ -107,7 +107,7 @@ const Detail = () => {
         <div className={style.info}>
           <div className={style.contacto}>
             <h4 className={style.subTitle}>
-              Quieres ponerte en contacto? enviame un mensaje...
+              Do you want to get in touch? send me a message...
             </h4>
             <div className={style.divButton}>
               <Link
@@ -117,7 +117,7 @@ const Detail = () => {
               >
                 <img className={style.imgWhats} src={img} alt="" />
                 <button className={style.buttonWhats}>
-                  Contactar por WhatsApp
+                  Contact via WhatsApp
                 </button>
               </Link>
             </div>
