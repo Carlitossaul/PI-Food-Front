@@ -30,7 +30,7 @@ const Detail = () => {
         </button>
         <h1 className={style.title}>{recipe.name}</h1>
         <div className={style.info}>
-          <p>⏱ Total Time: {recipe.readyInMinutes}</p>
+          <p>⏱ Total Time: {recipe.readyInMinutes} Minutes</p>
           <p>👨‍👩‍👧‍👦 Servings: {recipe.servings}</p>
           <p>❤ Health Score: {recipe.healthScore}</p>
         </div>
