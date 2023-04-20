@@ -14,8 +14,9 @@ const Detail = () => {
     window.scrollTo(0, 0);
   }, []);
   const recipe = useSelector((state) => state.detail);
+
   console.log(recipe);
-  console.log(id);
+
   return (
     <div className={style.container}>
       <div className={style.recipe}>
