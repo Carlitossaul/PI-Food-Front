@@ -31,18 +31,14 @@
   font-size: 1.1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--orange1);
+  background-color: var(--green1);
   color: var(--white1);
   cursor: pointer;
   transition: background-color 0.4s;
 }
 
 .button:hover {
-  background-color: #e62828;
-}
-
-.button:active {
-  color: #333;
+  background-color: var(--green2);
 }
 
 .title {

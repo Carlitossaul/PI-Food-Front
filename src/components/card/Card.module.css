@@ -75,29 +75,23 @@
   font-size: 1em;
 }
 .button {
-  width: 6em;
-  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  padding: 0.3em 0.8em;
+  border: none;
+  padding: 0.5em 0.8em;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 500;
   font-family: inherit;
-  background-color: var(--orange1);
-  border: 1px solid;
+  background-color: var(--green1);
   color: var(--white1);
-  text-shadow: 1px 1px 1px #252525;
   cursor: pointer;
   transition: background-color 0.4s;
-  margin-bottom: 5px;
 }
 
 .button:hover {
-  background-color: #5e412f;
-  border: 1px solid green;
-}
-
-.button:active {
-  color: #333;
+  background-color: var(--green2);
 }
 
 @media (max-width: 391px) {
