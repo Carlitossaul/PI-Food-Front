@@ -2,9 +2,9 @@ import style from "./About.module.css";
 import { useNavigate, Link } from "react-router-dom";
 import img from "../../helper/whatsapp.png";
 
-const handleWhatsapp = () => {
-  window.open("https://api.whatsapp.com/send?phone=3704988894");
-};
+// const handleWhatsapp = () => {
+//   window.open("https://api.whatsapp.com/send?phone=3704988894");
+// };
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -104,7 +104,7 @@ const Detail = () => {
             </tr>
           </table>
         </div>
-        <div className={style.info}>
+        {/* <div className={style.info}>
           <div className={style.contacto}>
             <h4 className={style.subTitle}>
               Do you want to get in touch? send me a message...
@@ -122,7 +122,7 @@ const Detail = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
