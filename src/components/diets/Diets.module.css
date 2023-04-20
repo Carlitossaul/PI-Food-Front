@@ -22,16 +22,16 @@
 }
 
 .button:hover {
-  background-color: #222;
+  background-color: var(--green2);
 }
 
 .buttonActive {
-  background-color: #049918f3;
+  background-color: var(--green1);
   padding: 9px 19px;
 }
 
 .buttonActive:hover {
-  background-color: #06af1c;
+  background-color: var(--green2);
   padding: 9px 19px;
 }
 
@@ -43,7 +43,7 @@
 
 .buttonOutline:hover {
   color: #fff;
-  background-color: #3c3c3c;
+  background-color: var(--green2);
 }
 
 @media (max-width: 391px) {

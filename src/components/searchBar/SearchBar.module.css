@@ -48,23 +48,23 @@
   align-items: center;
 }
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  border: 1px solid #52b788;
-  padding: 7px 17px;
-  font-size: 18px;
-  color: var(--black2);
-  text-shadow: 0 0 1px #ddd;
-  font-weight: 700;
+  border: none;
+  padding: 0.5em 0.8em;
+  font-size: 19px;
+  font-weight: 500;
   font-family: inherit;
-  background-color: #52b788;
+  background-color: var(--green1);
+  color: var(--white1);
   cursor: pointer;
-  transition: all 0.5s;
+  transition: background-color 0.4s;
 }
 
 .button:hover {
-  border-color: #646cff;
-  background-color: #4ad192;
-  border: 1px solid green;
+  background-color: var(--green2);
 }
 
 @media (max-width: 391px) {
