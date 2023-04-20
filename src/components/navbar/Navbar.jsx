@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav className={style.nav}>
         <div className={style.container}>
           <div className={style.links}>
-            <Link to={"/home"} className={style.conteinerImg}>
+            <Link to={"/"} className={style.conteinerImg}>
               <img className={style.img} src={img} alt="logo" />
             </Link>
             <Link
