@@ -28,7 +28,7 @@ export const getRecipes = () => {
   return async function (dispatch) {
     try {
       const response = await axios(`/recipes`);
-
+      console.log(response.data);
       dispatch({
         type: GET_RECIPES,
         payload: response.data,
@@ -55,7 +55,7 @@ export const getDetail = (id) => {
   return async function (dispatch) {
     try {
       const response = await axios.get(`/recipes/${id}`);
-      console.log(response.data);
+
       dispatch({
         type: GET_DETAIL,
         payload: response.data,
