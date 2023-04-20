@@ -38,8 +38,8 @@ const Detail = () => {
         </div>
         <h3 className={style.subTitle}>Diets:</h3>
         <ul className={style.ul}>
-          {Array.isArray(recipe.diets) &&
-            recipe.diets.map((dieta) => <li className={style.li}>{dieta},</li>)}
+          {Array.isArray(recipe.Diets) &&
+            recipe.Diets.map((dieta) => <li className={style.li}>{dieta},</li>)}
         </ul>
         <h3 className={style.subTitle}>Summary: </h3>
         <p className={style.text}>{recipe.summary}</p>
