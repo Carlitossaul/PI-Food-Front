@@ -1,44 +1,35 @@
 import React from "react";
 import style from "./Diets.module.css";
-import { useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import { filterDiets } from "../../redux/actions";
 
 const Diets = () => {
   const dispatch = useDispatch();
   const [selectedTag, setSelectedTag] = useState("");
 
-  const tags = [
-    { label: "gluten free", value: "gluten free" },
-    { label: "primal", value: "primal" },
-    { label: "whole 30", value: "whole 30" },
-    { label: "pescatarian", value: "pescatarian" },
-    { label: "vegan", value: "vegan" },
-    { label: "ketogenic", value: "ketogenic" },
-    { label: "dairy free", value: "dairy free" },
-    { label: "paleolithic", value: "paleolithic" },
-    { label: "lacto ovo vegetarian", value: "lacto ovo vegetarian" },
-    { label: "fodmap friendly", value: "fodmap friendly" },
-  ];
+  let diets = useSelector((state) => state.diets);
 
-  const handleTagClick = (tag) => {
-    let value = tag.value;
-    setSelectedTag(value);
-    dispatch(filterDiets(value));
+  const handleTagClick = (diet) => {
+    setSelectedTag(diet);
+    dispatch(filterDiets(diet));
   };
 
   const renderTags = () => {
-    return tags.map((tag, index) => (
-      <button
-        key={index}
-        className={`${style.button} ${
-          selectedTag === tag.value ? style.buttonActive : style.buttonOutline
-        }`}
-        onClick={() => handleTagClick(tag)}
-      >
-        {tag.label}
-      </button>
-    ));
+    return (
+      diets.length > 0 &&
+      diets.map((diet, index) => (
+        <button
+          key={index}
+          className={`${style.button} ${
+            selectedTag === diet ? style.buttonActive : style.buttonOutline
+          }`}
+          onClick={() => handleTagClick(diet)}
+        >
+          {diet}
+        </button>
+      ))
+    );
   };
 
   return <div className={style.container}>{renderTags()}</div>;

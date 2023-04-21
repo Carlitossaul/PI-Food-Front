@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import React, { useEffect } from "react";
-import { getRecipes } from "../../redux/actions";
+import { getRecipes, getDiets } from "../../redux/actions";
 import style from "./Home.module.css";
 import SearchBar from "../../components/searchBar/SearchBar";
 import Order from "../../components/order/Order";
@@ -12,6 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getRecipes());
+    dispatch(getDiets());
   }, []);
 
   return (

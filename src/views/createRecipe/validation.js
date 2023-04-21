@@ -12,7 +12,7 @@ const validation = ({
 
   if (name.length < 0) errors.name = "The recipe must have a name!";
   if (summary.length < 0) errors.summary = "Here is a summary of the recipe.";
-  if (readyInMinutes < 0)
+  if (servings < 0)
     errors.servings = "Please indicate how many servings this recipe yields";
   if (readyInMinutes < 0)
     errors.readyInMinutes = "how long is the preparation time?";

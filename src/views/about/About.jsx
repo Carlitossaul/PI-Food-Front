@@ -1,6 +1,6 @@
 import style from "./About.module.css";
 import { useNavigate, Link } from "react-router-dom";
-import img from "../../helper/whatsapp.png";
+// import img from "../../helper/whatsapp.png";
 
 // const handleWhatsapp = () => {
 //   window.open("https://api.whatsapp.com/send?phone=3704988894");

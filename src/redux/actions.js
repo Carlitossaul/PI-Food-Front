@@ -28,7 +28,7 @@ export const getRecipes = () => {
   return async function (dispatch) {
     try {
       const response = await axios(`/recipes`);
-      console.log(response.data);
+
       dispatch({
         type: GET_RECIPES,
         payload: response.data,

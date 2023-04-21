@@ -50,10 +50,7 @@ const CreateRecipe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(
-      "https://pi-food-back-production-2fb8.up.railway.app/recipes",
-      inputs
-    );
+    axios.post("/recipes", inputs);
     alert("Recipe created successfully");
     navigate("/home");
   };
@@ -165,7 +162,9 @@ const CreateRecipe = () => {
             value={inputs.summary}
             placeholder="Write a summary of the recipe"
           />
-          <span className={style.span}>{errors.name ? errors.name : " "}</span>
+          <span className={style.span}>
+            {errors.summary ? errors.summary : " "}
+          </span>
 
           <label className={style.label} htmlFor="steps">
             Steps:{" "}
