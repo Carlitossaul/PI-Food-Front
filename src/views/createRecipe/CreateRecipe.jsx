@@ -217,6 +217,7 @@ const CreateRecipe = () => {
           </button>
         </div>
       </form>
+      <div className={style.space}></div>
     </div>
   );
 };

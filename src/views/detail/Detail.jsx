@@ -15,8 +15,6 @@ const Detail = () => {
   }, []);
   const recipe = useSelector((state) => state.detail);
 
-  console.log(recipe);
-
   return (
     <div className={style.container}>
       <div className={style.recipe}>

@@ -176,6 +176,10 @@
   font-weight: 500;
 }
 
+.space {
+  height: 5em;
+}
+
 @media (max-width: 391px) {
   .container {
     width: 100%;
