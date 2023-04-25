@@ -1,5 +1,6 @@
 import style from "./About.module.css";
 import { useNavigate, Link } from "react-router-dom";
+import { useEffect } from "react";
 // import img from "../../helper/whatsapp.png";
 
 // const handleWhatsapp = () => {
@@ -8,6 +9,10 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Detail = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={style.about}>

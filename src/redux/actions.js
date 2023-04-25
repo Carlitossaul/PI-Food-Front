@@ -8,6 +8,7 @@ import {
   GET_DETAIL,
   HEALTH_SCORE,
   GET_DIETS,
+  SET_LOADING,
 } from "./types";
 
 export const getDiets = () => {
@@ -80,3 +81,8 @@ export const orderOrigin = (order) => {
 export const filterDiets = (diet) => {
   return { type: FILTER_DIETS, payload: diet };
 };
+
+export const setLoading = (isLoading) => ({
+  type: SET_LOADING,
+  payload: isLoading,
+});

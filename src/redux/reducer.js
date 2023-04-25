@@ -7,6 +7,7 @@ import {
   GET_DETAIL,
   HEALTH_SCORE,
   GET_DIETS,
+  SET_LOADING,
 } from "./types";
 
 const initialState = {
@@ -14,6 +15,7 @@ const initialState = {
   recipesAll: [],
   diets: [],
   detail: {},
+  isLoading: false,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -93,6 +95,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         detail: action.payload,
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.payload,
       };
     default:
       return {

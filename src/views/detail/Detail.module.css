@@ -99,6 +99,57 @@
   font-size: 1.2em;
 }
 
+.loadingContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--white2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loading {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--black2);
+}
+
+.loading::after {
+  content: ". . .";
+  display: inline-block;
+  animation: loading 1s infinite;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--black2);
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* .table {
   width: 100%;
   margin-top: 2.5em;
