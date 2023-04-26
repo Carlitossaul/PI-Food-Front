@@ -1,29 +1,30 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1em;
-}
 .cards {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 2em;
+  flex-direction: column;
+  gap: 1.5em;
   margin-right: 1em;
   margin-left: 1em;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.5em;
 }
 
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2em 0;
+  margin: 1em 0;
 }
 
-.button {
+.pagination button {
   display: inline-block;
   padding: 0.5em 1em;
   border-radius: 8px;
@@ -38,22 +39,25 @@
   transition: all 0.2s;
 }
 
-.button:hover,
-.button:focus {
+.pagination button:hover,
+.pagination button:focus {
   background-color: var(--white3);
 }
 
-.button.active {
+.pagination button.active {
   background-color: #06af1c;
   border-color: #049918f3;
   color: #fff;
 }
+.space {
+  height: 3em;
+}
 
 @media (max-width: 391px) {
-  .button {
-    font-size: 9px;
+  .pagination button {
+    font-size: 8px;
     margin: 3px 1px;
-    padding: 2px 5px;
+    padding: 1.5px 3px;
   }
   .pagination {
     margin: 13px 0px;
@@ -69,9 +73,10 @@
 }
 @media (min-width: 391px) and (max-width: 768px) {
   /* Estilos para pantallas con ancho máximo de 768px */
-  .button {
-    font-size: 10px;
-    margin: 5px 1px;
+  .pagination button {
+    font-size: 9.5px;
+    margin: 3px 1px;
+    padding: 2.5px 4.5px;
   }
   .pagination {
     margin: 20px 0px;

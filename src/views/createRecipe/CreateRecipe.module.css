@@ -103,16 +103,52 @@
   color: var(--black1);
 }
 
-.checkboxContainer {
+.dietsContainer {
   display: flex;
   flex-direction: column;
   gap: 9px;
 }
-.checkboxContainer input[type="checkbox"] {
-  margin-right: 10px;
-  cursor: pointer;
+
+.select {
+  background-color: #f1f3f4;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-top: 5px;
   outline: none;
+  color: #5f5f5f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 2em;
+  text-transform: capitalize;
 }
+
+.selectDiets p {
+  color: var(--black1);
+  font-weight: 200;
+}
+.selectDiets li {
+  text-transform: capitalize;
+}
+
+li::marker {
+  color: var(--green1);
+}
+
+.buttonDiet {
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  color: var(--white1);
+  background-color: #ff0000;
+  padding: 3px 6px;
+  font-size: 12px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttonDiet:hover {
+  background-color: #8b0000;
+}
+
 .form label {
   text-transform: capitalize;
   margin-top: 12px;

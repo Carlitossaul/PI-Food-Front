@@ -37,11 +37,6 @@ const CreateRecipe = () => {
     diets: [],
   });
 
-  const handleBlur = (e) => {
-    handleChange(e);
-    setErrors(validation(inputs));
-  };
-
   const handleChange = (e) => {
     setInputs({
       ...inputs,
@@ -66,12 +61,13 @@ const CreateRecipe = () => {
       navigate("/home");
     }
   };
-
   const handleSelect = (e) => {
-    setInputs({
-      ...inputs,
-      diets: [...inputs.diets, e.target.value],
-    });
+    if (!inputs.diets.includes(e.target.value)) {
+      setInputs({
+        ...inputs,
+        diets: [...inputs.diets, e.target.value],
+      });
+    }
   };
 
   const handleRemove = (diet) => {
@@ -101,7 +97,6 @@ const CreateRecipe = () => {
             Name:
           </label>
           <input
-            onBlur={handleBlur}
             className={style.input}
             type="text"
             name="name"
@@ -115,7 +110,6 @@ const CreateRecipe = () => {
             Servings:
           </label>
           <input
-            onBlur={handleBlur}
             className={style.input}
             placeholder="describes how"
             type="number"
@@ -131,7 +125,6 @@ const CreateRecipe = () => {
             Health Score:{" "}
           </label>
           <input
-            onBlur={handleBlur}
             className={style.input}
             placeholder="1 to 100 how healthy it is"
             type="number"
@@ -147,7 +140,6 @@ const CreateRecipe = () => {
             Ready In Minutes:{" "}
           </label>
           <input
-            onBlur={handleBlur}
             className={style.input}
             placeholder="cooking time"
             type="number"
@@ -163,7 +155,6 @@ const CreateRecipe = () => {
             Image:{" "}
           </label>
           <input
-            onBlur={handleBlur}
             className={style.input}
             placeholder="enter a URL to the image"
             type="text"
@@ -186,7 +177,6 @@ const CreateRecipe = () => {
             Summary:{" "}
           </label>
           <textarea
-            onBlur={handleBlur}
             className={style.textArea}
             type="text"
             name="summary"
@@ -202,7 +192,6 @@ const CreateRecipe = () => {
             Steps:{" "}
           </label>
           <textarea
-            onBlur={handleBlur}
             placeholder="Write the steps to prepare the recipe"
             className={style.textArea}
             type="text"
@@ -214,13 +203,13 @@ const CreateRecipe = () => {
             {errors.steps ? errors.steps : " "}
           </span>
 
-          <div className={style.checkboxContainer}>
+          <div className={style.dietsContainer}>
             <label htmlFor="diets">Diets:</label>
             <select
               id="diets"
-              multiple
               value={inputs.diets}
               onChange={handleSelect}
+              className={style.select}
             >
               {diets.map((diet) => (
                 <option key={diet} value={diet}>
@@ -228,49 +217,27 @@ const CreateRecipe = () => {
                 </option>
               ))}
             </select>
-            <div>
-              <p>Selected diets:</p>
+            <div className={style.selectDiets}>
+              <h4>Selected Diets:</h4>
               <ul>
                 {inputs.diets.map((diet) => (
                   <li key={diet}>
                     {diet}{" "}
-                    <button type="button" onClick={() => handleRemove(diet)}>
+                    <button
+                      className={style.buttonDiet}
+                      type="button"
+                      onClick={() => handleRemove(diet)}
+                    >
                       X
                     </button>
                   </li>
                 ))}
               </ul>
             </div>
+            <span className={style.span}>
+              {errors.diets ? errors.diets : " "}
+            </span>
           </div>
-          {/* <div className={style.checkboxContainer}>
-            {diets.length &&
-              diets.map((diet) => {
-                return (
-                  <div key={diet} className={style.checkbox}>
-                    <input
-                      onBlur={handleBlur}
-                      type="checkbox"
-                      id={diet}
-                      name="diets"
-                      value={diet}
-                      onChange={(e) =>
-                        setInputs({
-                          ...inputs,
-                          diets: e.target.checked
-                            ? [...inputs.diets, e.target.value]
-                            : inputs.diets.filter((d) => d !== e.target.value),
-                        })
-                        
-                      }
-                    />
-                    <label htmlFor={diet}>{diet}</label>
-                  </div>
-                );
-              })}
-          </div> */}
-          <span className={style.span}>
-            {errors.diets ? errors.diets : " "}
-          </span>
         </div>
 
         <div className={style.divSubmit}>
