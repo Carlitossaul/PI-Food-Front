@@ -105,10 +105,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white2);
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-color: var(--white3);
   z-index: 9999;
 }
 

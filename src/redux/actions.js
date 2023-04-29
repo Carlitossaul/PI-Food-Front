@@ -52,6 +52,7 @@ export const getRecipesByName = (name) => {
     }
   };
 };
+
 export const getDetail = (id) => {
   return async function (dispatch) {
     try {
