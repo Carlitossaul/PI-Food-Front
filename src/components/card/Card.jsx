@@ -12,8 +12,8 @@ const Card = ({ image, alt, name, diets, id, healthScore }) => {
           {" "}
           Diets:{" "}
           {Array.isArray(diets) &&
-            diets.map((dieta) => (
-              <ul className={style.ul}>
+            diets.map((dieta, i) => (
+              <ul key={i} className={style.ul}>
                 <li className={style.li}>{dieta}</li>
               </ul>
             ))}
