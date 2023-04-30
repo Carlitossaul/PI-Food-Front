@@ -7,9 +7,8 @@ import CreateRecipe from "./views/createRecipe/CreateRecipe.jsx";
 import Detail from "./views/detail/Detail.jsx";
 import About from "./views/about/About.jsx";
 import axios from "axios";
-axios.defaults.baseURL = "pi-food-back-production-2b34.up.railway.app/";
-//
-// este es el que voy a deployar
+axios.defaults.baseURL = "https://pi-food-back-production-2b34.up.railway.app/";
+// axios.defaults.baseURL = "http://localhost:3001/";
 
 const App = () => {
   return (
