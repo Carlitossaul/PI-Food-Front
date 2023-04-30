@@ -8,7 +8,7 @@ import Detail from "./views/detail/Detail.jsx";
 import About from "./views/about/About.jsx";
 import axios from "axios";
 axios.defaults.baseURL = "http://localhost:3001/";
-
+//
 // este es el que voy a deployar
 
 const App = () => {
