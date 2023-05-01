@@ -1,11 +1,9 @@
 import style from "./About.module.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useEffect } from "react";
-// import img from "../../helper/whatsapp.png";
-
-// const handleWhatsapp = () => {
-//   window.open("https://api.whatsapp.com/send?phone=3704988894");
-// };
+import { FaLinkedin } from "react-icons/fa";
+import { GoMarkGithub } from "react-icons/go";
+import { BsBoxArrowUpRight } from "react-icons/bs";
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -109,25 +107,39 @@ const Detail = () => {
             </tr>
           </table>
         </div>
-        {/* <div className={style.info}>
-          <div className={style.contacto}>
-            <h4 className={style.subTitle}>
-              Do you want to get in touch? send me a message...
-            </h4>
-            <div className={style.divButton}>
-              <Link
-                className={style.link}
-                href="javascript:void(0);"
-                onClick={handleWhatsapp}
-              >
-                <img className={style.imgWhats} src={img} alt="" />
-                <button className={style.buttonWhats}>
-                  Contact via WhatsApp
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div> */}
+        <h1 className={style.title}>Contact</h1>
+        <div className={style.links}>
+          <a
+            target="_blank"
+            className={style.link}
+            href="https://www.linkedin.com/in/carloslovey"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className={style.icon} />
+            LinkedIn:My professional profile on LinkedIn, where you can find
+            information about my work experience and skills. Click here!
+          </a>
+          <a
+            target="_blank"
+            className={style.link}
+            href="https://github.com/Carlitossaul"
+            rel="noopener noreferrer"
+          >
+            <GoMarkGithub className={style.icon} />
+            GitHub: "My GitHub profile, where I share some of my projects and
+            collaborations with the developer community. Click here!
+          </a>
+          <a
+            target="_blank"
+            className={style.link}
+            href="https://carloslovey.vercel.app/"
+            rel="noopener noreferrer"
+          >
+            <BsBoxArrowUpRight className={style.icon} />
+            Portfolio: My portfolio of projects, where you can see some of the
+            work I have done and my work style. Click here!
+          </a>
+        </div>
       </div>
     </div>
   );

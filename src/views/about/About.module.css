@@ -95,34 +95,23 @@ li::marker {
   justify-content: center;
   align-items: center;
 }
-.link {
-  text-decoration: none;
+.links {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 1em;
+}
+.link {
+  display: flex;
   align-items: center;
-  background-color: #46c054;
-  width: 17em;
-  height: 3em;
-  border-radius: 50px;
-  transition: all 0.5s;
+  text-decoration: none;
+  color: var(--black2);
+  font-size: 1.2em;
 }
-.link:hover {
-  background-color: #41d352;
+.icon {
+  margin-right: 8px;
+  font-size: 30px;
 }
-
-.buttonWhats {
-  border: none;
-  background-color: transparent;
-  color: var(--white2);
-  font-weight: 600;
-  text-shadow: 0 0 2px var(--black2);
-  font-size: 16px;
-  cursor: pointer;
-}
-.imgWhats {
-  height: 30px;
-}
-
 @media (max-width: 391px) {
   .container {
     display: flex;
@@ -249,7 +238,11 @@ li::marker {
     font-weight: 500;
   }
   .link {
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .links {
+    margin-bottom: 1em;
   }
 
   .subTitle {
