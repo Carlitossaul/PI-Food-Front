@@ -68,7 +68,11 @@ const CardsRecipes = () => {
         <button disabled={currentPage === 1} onClick={handlePrevClick}>
           Previous
         </button>
-        {renderPageNumbers()}
+        {!recipes.length ? (
+          <h1> No matches found for your search, try searching in english. </h1>
+        ) : (
+          renderPageNumbers()
+        )}
         <button disabled={currentPage === totalPages} onClick={handleNextClick}>
           Next
         </button>
