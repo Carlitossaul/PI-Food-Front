@@ -45,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case ORDER_ALPHABETIC:
       let order = action.payload;
-      let allRecipes = [...state.recipes];
+      let allRecipes = [...state.recipesAll];
       let ordered = allRecipes.sort((a, b) => {
         if (order === "Ascendente") {
           return a.name && b.name ? a.name.localeCompare(b.name) : 0;
@@ -59,7 +59,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case HEALTH_SCORE:
       let healthScore = action.payload;
-      let healthRecipes = [...state.recipes];
+      let healthRecipes = [...state.recipesAll];
       let isAscending = healthScore === "mas";
       let healthRecipesEnd = healthRecipes.sort((a, b) => {
         if (isAscending) {
@@ -89,7 +89,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case FILTER_DIETS:
       let diet = action.payload;
-      let recipes = [...state.recipes];
+      let recipes = [...state.recipesAll];
       let filteredDiets = recipes.filter(
         (recipe) => recipe.Diets && recipe.Diets.includes(diet)
       );
