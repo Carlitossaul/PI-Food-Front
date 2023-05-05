@@ -14,9 +14,22 @@
 .select {
   margin: 10px;
   padding: 5px;
-  border-radius: 5px;
-  border: 1px solid var(--black1);
-  background-color: var(--white1);
+  border-radius: 8px;
+  /* border: 1px solid var(--black1); */
+  border: none;
+  background-color: var(--white2);
+  color: var(--black3);
+  font-size: 15px;
+  outline: none;
+}
+
+.button {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 8px;
+  /* border: 1px solid var(--black1); */
+  border: none;
+  background-color: var(--white2);
   color: var(--black3);
   font-size: 15px;
   outline: none;
@@ -24,6 +37,7 @@
 
 .option {
   color: var(--black2);
+  border: none;
 }
 .option:hover {
   background-color: orange;

@@ -80,7 +80,9 @@ const Order = () => {
         </select>
       </div>
       <div className={style.selectColumn}>
-        <button onClick={() => dispatch(reset())}>Reset</button>
+        <button className={style.button} onClick={() => dispatch(reset())}>
+          Reset
+        </button>
       </div>
     </div>
   );
