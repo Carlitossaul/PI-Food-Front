@@ -5,6 +5,7 @@ import {
   orderAlphabetic,
   orderOrigin,
   getHealthScore,
+  reset,
 } from "../../redux/actions";
 
 const Order = () => {
@@ -77,6 +78,9 @@ const Order = () => {
             Health Score -{" "}
           </option>
         </select>
+      </div>
+      <div className={style.selectColumn}>
+        <button onClick={() => dispatch(reset())}>Reset</button>
       </div>
     </div>
   );

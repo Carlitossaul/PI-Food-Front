@@ -9,6 +9,7 @@ import {
   HEALTH_SCORE,
   GET_DIETS,
   SET_LOADING,
+  RESET,
 } from "./types";
 
 export const getDiets = () => {
@@ -87,3 +88,9 @@ export const setLoading = (isLoading) => ({
   type: SET_LOADING,
   payload: isLoading,
 });
+
+export const reset = () => {
+  return {
+    type: RESET,
+  };
+};

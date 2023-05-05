@@ -52,7 +52,7 @@ const CreateRecipe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.values(errors).length > 0) {
+    if (Object.values(errors).length > 0 || !inputs.diets.length) {
       alert("Please fill in all the fields");
     } else {
       e.preventDefault();

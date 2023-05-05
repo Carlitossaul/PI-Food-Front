@@ -8,6 +8,7 @@ import {
   HEALTH_SCORE,
   GET_DIETS,
   SET_LOADING,
+  RESET,
 } from "./types";
 
 const initialState = {
@@ -20,6 +21,11 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case RESET:
+      return {
+        ...state,
+        recipes: state.recipesAll,
+      };
     case GET_DIETS:
       return {
         ...state,
@@ -39,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case ORDER_ALPHABETIC:
       let order = action.payload;
-      let allRecipes = [...state.recipesAll];
+      let allRecipes = [...state.recipes];
       let ordered = allRecipes.sort((a, b) => {
         if (order === "Ascendente") {
           return a.name && b.name ? a.name.localeCompare(b.name) : 0;
@@ -53,7 +59,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case HEALTH_SCORE:
       let healthScore = action.payload;
-      let healthRecipes = [...state.recipesAll];
+      let healthRecipes = [...state.recipes];
       let isAscending = healthScore === "mas";
       let healthRecipesEnd = healthRecipes.sort((a, b) => {
         if (isAscending) {
@@ -83,7 +89,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case FILTER_DIETS:
       let diet = action.payload;
-      let recipes = [...state.recipesAll];
+      let recipes = [...state.recipes];
       let filteredDiets = recipes.filter(
         (recipe) => recipe.Diets && recipe.Diets.includes(diet)
       );

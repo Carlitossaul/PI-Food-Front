@@ -23,10 +23,6 @@ const validation = ({
     errors.image = "Please add the url of the image of your recipe.";
   if (steps.length <= 0)
     errors.steps = "What are the steps to prepare the recipe?";
-  if (!diets)
-    errors.diets =
-      "What type of diet does this recipe belong to? it can be several...";
-
   return errors;
 };
 
