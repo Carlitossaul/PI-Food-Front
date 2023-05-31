@@ -5,6 +5,7 @@ import style from "./CreateRecipe.module.css";
 import validation from "./validation";
 import { useDispatch, useSelector } from "react-redux";
 import { getDiets } from "../../redux/actions";
+import { toast } from "react-hot-toast";
 
 const CreateRecipe = () => {
   const navigate = useNavigate();
@@ -53,11 +54,11 @@ const CreateRecipe = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (Object.values(errors).length > 0 || !inputs.diets.length) {
-      alert("Please fill in all the fields");
+      toast.error("Please fill in all the fields");
     } else {
       e.preventDefault();
       axios.post("/recipes", inputs);
-      alert("Recipe created successfully");
+      toast.success("Recipe created successfully");
       navigate("/home");
     }
   };
@@ -103,8 +104,9 @@ const CreateRecipe = () => {
             onChange={handleChange}
             value={inputs.name}
             placeholder="your recipe name"
+            required
           />
-          <span className={style.span}>{errors.name ? errors.name : " "}</span>
+          {/* <span className={style.span}>{errors.name ? errors.name : " "}</span> */}
 
           <label className={style.label} htmlFor="servings">
             Servings:
@@ -116,9 +118,10 @@ const CreateRecipe = () => {
             name="servings"
             onChange={handleChange}
             value={inputs.servings}
+            required
           />
           <span className={style.span}>
-            {errors.servings ? errors.servings : " "}
+            {/* {errors.servings ? errors.servings : " "} */}
           </span>
 
           <label className={style.label} htmlFor="healthScore">
@@ -146,9 +149,10 @@ const CreateRecipe = () => {
             name="readyInMinutes"
             onChange={handleChange}
             value={inputs.readyInMinutes}
+            required
           />
           <span className={style.span}>
-            {errors.readyInMinutes ? errors.readyInMinutes : " "}
+            {/* {errors.readyInMinutes ? errors.readyInMinutes : " "} */}
           </span>
 
           <label className={style.label} htmlFor="image">
@@ -183,9 +187,10 @@ const CreateRecipe = () => {
             onChange={handleChange}
             value={inputs.summary}
             placeholder="Write a summary of the recipe"
+            required
           />
           <span className={style.span}>
-            {errors.summary ? errors.summary : " "}
+            {/* {errors.summary ? errors.summary : " "} */}
           </span>
 
           <label className={style.label} htmlFor="steps">
@@ -198,9 +203,10 @@ const CreateRecipe = () => {
             name="steps"
             onChange={handleChange}
             value={inputs.steps}
+            required
           />
           <span className={style.span}>
-            {errors.steps ? errors.steps : " "}
+            {/* {errors.steps ? errors.steps : " "} */}
           </span>
 
           <div className={style.dietsContainer}>
@@ -210,6 +216,7 @@ const CreateRecipe = () => {
               value={inputs.diets}
               onChange={handleSelect}
               className={style.select}
+              required
             >
               {diets.map((diet) => (
                 <option key={diet} value={diet}>

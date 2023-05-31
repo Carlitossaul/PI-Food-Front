@@ -116,7 +116,7 @@ const Detail = () => {
             rel="noopener noreferrer"
           >
             <FaLinkedin className={style.icon} />
-            LinkedIn:My professional profile on LinkedIn, where you can find
+            LinkedIn: My professional profile on LinkedIn, where you can find
             information about my work experience and skills. Click here!
           </a>
           <a
@@ -126,7 +126,7 @@ const Detail = () => {
             rel="noopener noreferrer"
           >
             <GoMarkGithub className={style.icon} />
-            GitHub: "My GitHub profile, where I share some of my projects and
+            GitHub: My GitHub profile, where I share some of my projects and
             collaborations with the developer community. Click here!
           </a>
           <a

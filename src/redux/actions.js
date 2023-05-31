@@ -11,6 +11,7 @@ import {
   SET_LOADING,
   RESET,
 } from "./types";
+import { toast } from "react-hot-toast";
 
 export const getDiets = () => {
   return async function (dispatch) {
@@ -44,6 +45,9 @@ export const getRecipesByName = (name) => {
   return async function (dispatch) {
     try {
       const response = await axios.get(`/recipes?name=${name}`);
+      if (response.data.length === 0) {
+        toast("There are no recipes with that name");
+      }
       dispatch({
         type: GET_RECIPES_BY_NAME,
         payload: response.data,
