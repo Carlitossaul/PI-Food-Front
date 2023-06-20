@@ -77,7 +77,7 @@ const CardsRecipes = () => {
       </div>
       <div>
         {" "}
-        {notRecipes && (
+        {!recipes.length && notRecipes && (
           <div className={style.containerNotFound}>
             {" "}
             <p>No results found! </p>🔍
