@@ -13,7 +13,9 @@ const CreateRecipe = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(getDiets());
+    if (!diets.length) {
+      dispatch(getDiets());
+    }
   }, []);
   let diets = useSelector((state) => state.diets);
 
@@ -49,6 +51,35 @@ const CreateRecipe = () => {
         [e.target.name]: e.target.value,
       })
     );
+  };
+
+  const handleImageUpload = async (event) => {
+    const { name } = event.target;
+    if (name === "image") {
+      const file = event.target.files[0];
+
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "images_recipes");
+        formData.append("api_key", "918514969885439");
+
+        const response = await axios.post(
+          "https://api.cloudinary.com/v1_1/dsid48ogb/image/upload",
+          formData
+        );
+
+        const data = await response.data;
+        const imageUrl = data.secure_url;
+
+        setInputs((prevInputs) => ({
+          ...prevInputs,
+          image: imageUrl,
+        }));
+      } catch (error) {
+        console.error("Error al cargar la imagen:", error);
+      }
+    }
   };
 
   const handleSubmit = (e) => {
@@ -163,21 +194,32 @@ const CreateRecipe = () => {
             Image:{" "}
           </label>
           <input
-            className={style.input}
+            className={`${style.input} ${style.customInput}`}
             placeholder="enter a URL to the image"
-            type="text"
+            type="file"
             name="image"
-            onChange={handleChange}
-            value={inputs.image}
+            onChange={handleImageUpload}
+            accept="image/*"
+            required
           />
           <span className={style.span}>
             {errors.image ? errors.image : " "}
           </span>
 
-          <div className={style.divImage}>
-            <h1 className={style.imageTitle}>Image Preview </h1>
-            <img className={style.image} src={inputs.image} alt="" />
-          </div>
+          {inputs.image ? (
+            <div className={style.divImage}>
+              <h1 className={style.imageTitle}>Image Preview </h1>
+              <img
+                className={style.image}
+                src={inputs.image}
+                alt="image-preview"
+              />
+            </div>
+          ) : (
+            <>
+              <p></p>
+            </>
+          )}
         </div>
 
         <div className={style.divTextArea}>
@@ -222,31 +264,35 @@ const CreateRecipe = () => {
               className={style.select}
               required
             >
-              {diets.map((diet) => (
-                <option key={diet} value={diet}>
-                  {diet}
-                </option>
-              ))}
+              {diets &&
+                diets.length > 0 &&
+                diets.map((diet) => (
+                  <option key={diet} value={diet}>
+                    {diet}
+                  </option>
+                ))}
             </select>
             <div className={style.selectDiets}>
               <h4>Selected Diets:</h4>
               <ul>
-                {inputs.diets.map((diet) => (
-                  <li key={diet}>
-                    {diet}{" "}
-                    <button
-                      className={style.buttonDiet}
-                      type="button"
-                      onClick={() => handleRemove(diet)}
-                    >
-                      X
-                    </button>
-                  </li>
-                ))}
+                {inputs.diets &&
+                  inputs.length > 0 &&
+                  inputs.diets.map((diet) => (
+                    <li key={diet}>
+                      {diet}{" "}
+                      <button
+                        className={style.buttonDiet}
+                        type="button"
+                        onClick={() => handleRemove(diet)}
+                      >
+                        X
+                      </button>
+                    </li>
+                  ))}
               </ul>
             </div>
             <span className={style.span}>
-              {errors.diets ? errors.diets : " "}
+              {errors.diets && errors.diets.length > 0 ? errors.diets : " "}
             </span>
           </div>
         </div>
