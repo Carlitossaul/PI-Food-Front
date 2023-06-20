@@ -1,24 +1,29 @@
 import React from "react";
 import style from "./Order.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   orderAlphabetic,
   orderOrigin,
   getHealthScore,
   reset,
 } from "../../redux/actions";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 
 const Order = () => {
   const dispatch = useDispatch();
+  const recipesAll = useSelector((state) => state.recipesAll);
 
   const handleOrderAbc = (event) => {
     dispatch(orderAlphabetic(event.target.value));
   };
   const handleOrderOrigin = (event) => {
-    dispatch(orderOrigin(event.target.value));
+    const result = recipesAll.filter((recipes) => {
+      if (event.target.value === "Api") {
+        return recipes.created === false;
+      } else {
+        return recipes.created === true;
+      }
+    });
+    dispatch(orderOrigin(result));
   };
   const handleHealthScore = (event) => {
     dispatch(getHealthScore(event.target.value));

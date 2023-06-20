@@ -20,6 +20,7 @@ const Detail = () => {
   }, [dispatch, id]);
 
   const recipe = useSelector((state) => state.detail);
+  console.log(recipe);
   return (
     <div className={style.container}>
       {isLoading ? (

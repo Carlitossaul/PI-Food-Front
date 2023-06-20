@@ -16,7 +16,13 @@
   flex-direction: row;
   gap: 1.5em;
 }
-
+.containerNotFound {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.5em;
+  font-weight: 500;
+}
 .pagination {
   display: flex;
   justify-content: center;

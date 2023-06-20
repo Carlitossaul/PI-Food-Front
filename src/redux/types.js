@@ -8,3 +8,5 @@ export const HEALTH_SCORE = "HEALTH_SCORE";
 export const GET_DIETS = "GET_DIETS";
 export const SET_LOADING = "SET_LOADING";
 export const RESET = "RESET";
+export const NOT_RECIPES = "NOT_RECIPES";
+export const THERE_WAS_CHANGE = "THERE_WAS_CHANGE";

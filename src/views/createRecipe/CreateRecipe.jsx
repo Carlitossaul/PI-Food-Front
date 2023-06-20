@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import style from "./CreateRecipe.module.css";
 import validation from "./validation";
 import { useDispatch, useSelector } from "react-redux";
-import { getDiets } from "../../redux/actions";
+import { getDiets, thereWasChange } from "../../redux/actions";
 import { toast } from "react-hot-toast";
 
 const CreateRecipe = () => {
@@ -58,8 +58,12 @@ const CreateRecipe = () => {
     } else {
       e.preventDefault();
       axios.post("/recipes", inputs);
+      setInputs({ ...inputs, name: "" });
+      dispatch(thereWasChange(true));
       toast.success("Recipe created successfully");
-      navigate("/home");
+      setTimeout(() => {
+        navigate("/home");
+      }, 1000);
     }
   };
   const handleSelect = (e) => {

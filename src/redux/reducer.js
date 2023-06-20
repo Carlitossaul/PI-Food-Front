@@ -9,6 +9,8 @@ import {
   GET_DIETS,
   SET_LOADING,
   RESET,
+  NOT_RECIPES,
+  THERE_WAS_CHANGE,
 } from "./types";
 
 const initialState = {
@@ -17,6 +19,8 @@ const initialState = {
   diets: [],
   detail: {},
   isLoading: false,
+  notRecipes: false,
+  thereWasChange: false,
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -45,7 +49,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case ORDER_ALPHABETIC:
       let order = action.payload;
-      let allRecipes = [...state.recipesAll];
+      let allRecipes = [...state.recipes];
       let ordered = allRecipes.sort((a, b) => {
         if (order === "Ascendente") {
           return a.name && b.name ? a.name.localeCompare(b.name) : 0;
@@ -59,7 +63,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case HEALTH_SCORE:
       let healthScore = action.payload;
-      let healthRecipes = [...state.recipesAll];
+      let healthRecipes = [...state.recipes];
       let isAscending = healthScore === "mas";
       let healthRecipesEnd = healthRecipes.sort((a, b) => {
         if (isAscending) {
@@ -74,28 +78,14 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case ORDER_ORIGIN:
-      let select = action.payload;
-      let recipesAll = [...state.recipesAll];
-      let orderedOrigin = recipesAll.filter((recipe) => {
-        if (select === "Api") {
-          return recipe.created === false;
-        } else {
-          return recipe.created === true;
-        }
-      });
       return {
         ...state,
-        recipes: orderedOrigin,
+        recipes: action.payload,
       };
     case FILTER_DIETS:
-      let diet = action.payload;
-      let recipes = [...state.recipesAll];
-      let filteredDiets = recipes.filter(
-        (recipe) => recipe.Diets && recipe.Diets.includes(diet)
-      );
       return {
         ...state,
-        recipes: filteredDiets,
+        recipes: action.payload,
       };
     case GET_DETAIL:
       return {
@@ -106,6 +96,17 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.payload,
+      };
+    case NOT_RECIPES:
+      return {
+        ...state,
+        notRecipes: action.payload,
+        recipes: [],
+      };
+    case THERE_WAS_CHANGE:
+      return {
+        ...state,
+        thereWasChange: action.payload,
       };
     default:
       return {

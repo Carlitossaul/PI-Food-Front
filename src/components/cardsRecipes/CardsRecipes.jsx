@@ -5,6 +5,7 @@ import style from "./CardsRecipes.module.css";
 
 const CardsRecipes = () => {
   const recipes = useSelector((state) => state.recipes);
+  const notRecipes = useSelector((state) => state.notRecipes);
 
   const [currentPage, setCurrentPage] = useState(1);
   const recipesPerPage = 9;
@@ -73,6 +74,15 @@ const CardsRecipes = () => {
         <button disabled={currentPage === totalPages} onClick={handleNextClick}>
           Next
         </button>
+      </div>
+      <div>
+        {" "}
+        {notRecipes && (
+          <div className={style.containerNotFound}>
+            {" "}
+            <p>No results found! </p>🔍
+          </div>
+        )}{" "}
       </div>
       <div className={style.container}>{renderRecipes()}</div>
       <div className={style.space}></div>

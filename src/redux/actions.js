@@ -10,8 +10,9 @@ import {
   GET_DIETS,
   SET_LOADING,
   RESET,
+  NOT_RECIPES,
+  THERE_WAS_CHANGE,
 } from "./types";
-import { toast } from "react-hot-toast";
 
 export const getDiets = () => {
   return async function (dispatch) {
@@ -46,12 +47,16 @@ export const getRecipesByName = (name) => {
     try {
       const response = await axios.get(`/recipes?name=${name}`);
       if (response.data.length === 0) {
-        toast("There are no recipes with that name");
+        dispatch({
+          type: NOT_RECIPES,
+          payload: true,
+        });
+      } else {
+        dispatch({
+          type: GET_RECIPES_BY_NAME,
+          payload: response.data,
+        });
       }
-      dispatch({
-        type: GET_RECIPES_BY_NAME,
-        payload: response.data,
-      });
     } catch (error) {
       console.log(error);
     }
@@ -96,5 +101,11 @@ export const setLoading = (isLoading) => ({
 export const reset = () => {
   return {
     type: RESET,
+  };
+};
+export const thereWasChange = (boolean) => {
+  return {
+    type: THERE_WAS_CHANGE,
+    payload: boolean,
   };
 };

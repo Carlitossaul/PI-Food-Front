@@ -7,12 +7,15 @@ import { filterDiets } from "../../redux/actions";
 const Diets = () => {
   const dispatch = useDispatch();
   const [selectedTag, setSelectedTag] = useState("");
-
   let diets = useSelector((state) => state.diets);
+  let recipesAll = useSelector((state) => state.recipesAll);
 
   const handleTagClick = (diet) => {
     setSelectedTag(diet);
-    dispatch(filterDiets(diet));
+    const result = recipesAll.filter(
+      (recipe) => recipe.Diets && recipe.Diets.includes(diet)
+    );
+    dispatch(filterDiets(result));
   };
 
   const renderTags = () => {
