@@ -85,6 +85,15 @@ const CardsRecipes = () => {
         )}{" "}
       </div>
       <div className={style.container}>{renderRecipes()}</div>
+      <div className={style.pagination}>
+        <button disabled={currentPage === 1} onClick={handlePrevClick}>
+          Previous
+        </button>
+        {renderPageNumbers()}
+        <button disabled={currentPage === totalPages} onClick={handleNextClick}>
+          Next
+        </button>
+      </div>
       <div className={style.space}></div>
     </div>
   );

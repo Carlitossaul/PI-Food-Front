@@ -3,15 +3,16 @@
 
 .header {
   width: 100%;
-  height: 31em;
+  height: 29em;
   background-image: url("../../helper/concept-mexican-food-flat-lay-685649.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
+  box-shadow: 0px 0px 3px 3px rgb(0, 0, 0, 0.5);
 }
 
 .conteinerDiets {
