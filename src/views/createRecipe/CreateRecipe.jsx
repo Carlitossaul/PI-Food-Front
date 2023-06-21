@@ -265,7 +265,6 @@ const CreateRecipe = () => {
               required
             >
               {diets &&
-                diets.length > 0 &&
                 diets.map((diet) => (
                   <option key={diet} value={diet}>
                     {diet}
@@ -275,20 +274,18 @@ const CreateRecipe = () => {
             <div className={style.selectDiets}>
               <h4>Selected Diets:</h4>
               <ul>
-                {inputs.diets &&
-                  inputs.length > 0 &&
-                  inputs.diets.map((diet) => (
-                    <li key={diet}>
-                      {diet}{" "}
-                      <button
-                        className={style.buttonDiet}
-                        type="button"
-                        onClick={() => handleRemove(diet)}
-                      >
-                        X
-                      </button>
-                    </li>
-                  ))}
+                {inputs.diets.map((diet) => (
+                  <li key={diet}>
+                    {diet}{" "}
+                    <button
+                      className={style.buttonDiet}
+                      type="button"
+                      onClick={() => handleRemove(diet)}
+                    >
+                      X
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
             <span className={style.span}>
