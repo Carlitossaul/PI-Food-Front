@@ -89,6 +89,7 @@ const CreateRecipe = () => {
     } else {
       e.preventDefault();
       axios.post("/recipes", inputs);
+      console.log(inputs);
       setInputs({ ...inputs, name: "" });
       dispatch(thereWasChange(true));
       toast.success("Recipe created successfully");
@@ -264,6 +265,7 @@ const CreateRecipe = () => {
               className={style.select}
               required
             >
+              <option>select diet...</option>
               {diets &&
                 diets.map((diet) => (
                   <option key={diet} value={diet}>
